@@ -14,7 +14,7 @@ const projects = [
     projectDemoLink:
       'https://rekha0suthar.github.io/E-commerce-web-application/',
     projectSummary:
-      'An e-commerce platform with features including product management, user authentication, and responsive design.',
+      'An e-commerce platform with features including product management, and responsive design.',
   },
   // {
   //   projectName: "Grocery Shopping Application",
@@ -62,32 +62,30 @@ const Projects = () => {
       <h1>Projects</h1>
       <hr />
       <div className="projects-detail">
-        {projects.map((project) => {
+        {projects.map((project, idx) => {
           return (
-            <div className="project-header">
+            <div className="project-header" key={idx}>
               <img src={project.projectImage} alt="" />
               <hr />
               <div>
                 <h2>{project.projectName}</h2>
                 <p>{project.projectSummary}</p>
-                <button className="live-btn">
-                  <a
-                    href={project.projectDemoLink}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Live Demo
-                  </a>
-                </button>
-                <button className="repo-btn">
-                  <a
-                    href={project.projectRepoLink}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    GitHub Repo
-                  </a>
-                </button>{' '}
+                <a
+                  href={project.projectDemoLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="live-btn"
+                >
+                  Demo
+                </a>{' '}
+                <a
+                  href={project.projectRepoLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="repo-btn"
+                >
+                  Code
+                </a>
               </div>
             </div>
           );
