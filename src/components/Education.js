@@ -24,17 +24,17 @@ const Education = () => {
         <h2>BSc in Data Science and Programming</h2>
         <p>India Institute of Technology, Madras</p>
         <div className="education-projects">
-          {projects.map((project) => {
+          {projects.map((project, idx) => {
             return (
-              <div>
+              <div key={idx}>
                 <div>
                   {project.projectName} - {project.projectTitle}
                 </div>
                 <br />
-                <a href={project.link}>Github Repo</a>
-                <ul>
+                <a href={project.link}>Code</a>
+                <ul key={project.projectTitle}>
                   {project.projectDesc.map((item) => {
-                    return <li>{item}</li>;
+                    return <li key={item}>{item}</li>;
                   })}
                 </ul>
               </div>

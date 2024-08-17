@@ -8,7 +8,7 @@ const About = () => {
         <hr />
         <p>
           I am Rekha Suthar, Software Developer. I have total of 2 years of
-          experience in multiple domain like Software Development and Team
+          experience in multiple domains like Software Development and Team
           Management. I have degree of Bachelor's of science in Data Science and
           Programming. My Strengths are that I can work under pressure, have
           good adaptability and responsive person. I am passionate about

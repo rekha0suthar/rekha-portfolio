@@ -21,31 +21,42 @@ body {
 }
 
 .navbar {
-  background: rgb(2, 0, 36);
-  background: linear-gradient(
-    90deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(9, 9, 121, 1) 2%,
-    rgba(0, 212, 255, 1) 46%
+  background: rgb(238, 174, 202);
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 187, 233, 1) 21%
   );
-  box-shadow: 0px 2px 6px #ccc;
+  box-shadow: 0px 2px 6px #6b6a6a;
   padding: 1em;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
+  /* display: flex;
+  justify-content: space-between; */
 }
 
-.navbar .nav-item {
+.navbar div {
+  padding: 10px 20px;
+}
+
+/* .navbar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+} */
+
+.nav-item {
   color: #000;
   text-decoration: none;
-  padding: 10px 40px;
+  padding: 20px 40px;
   font-size: 20px;
   font-weight: 500;
   cursor: pointer;
 }
 
-.navbar .active {
+.active {
   color: var(--coral-color);
   cursor: pointer;
 }
@@ -131,7 +142,7 @@ body {
 .skill-container {
   margin-bottom: 10px;
   display: grid;
-  gap: 20px;
+  gap: 30px;
   grid-template-columns: repeat(3, 1fr);
   max-width: 100%;
 }
@@ -140,6 +151,13 @@ body {
 .project-header {
   background-color: white;
   box-shadow: 0px 0px 6px #a09e9e;
+  transition: 1s;
+}
+
+.detail-header:hover,
+.project-header:hover {
+  transform: scale(1.1);
+  z-index: 2;
 }
 
 /* About Section */
@@ -155,6 +173,12 @@ body {
   color: var(--dark-cadetblue-color);
   padding: 40px 20px;
   border-radius: 10px;
+  transition: 1s;
+}
+
+.about-section div p:hover {
+  transform: scale(1.1);
+  z-index: 2;
 }
 
 /* Experience section */
@@ -232,35 +256,32 @@ ul {
   font-weight: bold;
 }
 
-.live-btn {
-  border: 1px solid var(--cadetblue-color);
+.live-btn,
+.repo-btn {
+  padding: 3px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
 }
 
-.live-btn a {
+.live-btn {
+  border: 1px solid var(--cadetblue-color);
   color: var(--cadetblue-color);
 }
 
 .repo-btn {
   border: 1px solid var(--coral-color);
-}
-
-.repo-btn a {
   color: var(--coral-color);
 }
 
 .live-btn:hover {
   background-color: var(--cadetblue-color);
-}
-
-.live-btn a:hover {
   color: white;
 }
 
 .repo-btn:hover {
   background-color: var(--coral-color);
-}
-
-.repo-btn a:hover {
   color: white;
 }
 
@@ -270,6 +291,12 @@ ul {
   background-color: rgba(204, 204, 204, 0.2);
   box-shadow: 0px 0px 6px #a09e9e;
   padding: 10px 20px;
+  transition: 1s;
+}
+
+.skill-wrapper:hover {
+  transform: scale(1.1);
+  z-index: 2;
 }
 
 .skill-details {
@@ -288,47 +315,32 @@ progress {
   width: 100%;
   border-radius: 10px;
   overflow: hidden;
-  background-color: rgb(197, 142, 105);
   cursor: pointer;
 }
 
 progress[value]::-webkit-progress-bar {
-  background-color: rgb(190, 186, 186);
+  background-color: lightgrey;
 }
 
 progress[value]::-webkit-progress-value {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  background-image: linear-gradient(
-    45deg,
-    #f06881 25%,
-    #6d7478 25%,
-    #6d7478 50%,
-    #f06881 50%,
-    #f06881 75%,
-    #6d7478 75%,
-    #6d7478 100%
-  );
+  background-color: rgb(78, 132, 233);
   background-size: 56.57px 56.57px;
 }
 
 progress[value]::-moz-progress-bar {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  background-image: linear-gradient(
-    45deg,
-    #f06881 25%,
-    #6d7478 25%,
-    #6d7478 50%,
-    #f06881 50%,
-    #f06881 75%,
-    #6d7478 75%,
-    #6d7478 100%
-  );
+  background-color: gray;
   background-size: 56.57px 56.57px;
 }
 
 /* Education Section */
+
+.education-section {
+  margin-bottom: 100px;
+}
 
 .education-details {
   background-color: rgb(218, 227, 240);
@@ -336,7 +348,8 @@ progress[value]::-moz-progress-bar {
   padding: 20px;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  max-width: 100%;
+  max-width: 80%;
+  margin: auto;
 }
 
 .education-projects div div {
@@ -351,8 +364,8 @@ progress[value]::-moz-progress-bar {
 }
 
 .education-projects ul li {
-  font-size: 16px;
-  line-height: 1.7;
+  font-size: 18px;
+  line-height: 1.8;
 }
 
 @media screen and (max-width: 900px) {

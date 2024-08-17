@@ -44,9 +44,9 @@ const Experience = () => {
       <hr />
 
       <div className="experience-detail">
-        {experiences.map((experience) => {
+        {experiences.map((experience, idx) => {
           return (
-            <div className="detail-header">
+            <div className="detail-header" key={idx}>
               <span>
                 <h2>{experience.title}</h2>
                 <h4>{experience.companyName}</h4>

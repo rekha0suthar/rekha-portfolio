@@ -31,21 +31,23 @@ const navList = [
 const Navbar = () => {
   return (
     <div className="navbar">
-      {navList.map((navItem) => {
-        return (
-          <Link
-            to={navItem.link}
-            spy={true}
-            smooth={true}
-            duration={1000}
-            className="nav-item"
-            activeClass="active"
-            offset={-150}
-          >
-            {navItem.title}
-          </Link>
-        );
-      })}
+      <div>
+        {navList.map((navItem) => {
+          return (
+            <Link
+              to={navItem.link}
+              spy={true}
+              smooth={true}
+              duration={1000}
+              className="nav-item"
+              activeClass="active"
+              offset={-300}
+            >
+              {navItem.title}
+            </Link>
+          );
+        })}
+      </div>
     </div>
   );
 };
