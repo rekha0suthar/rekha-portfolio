@@ -1,20 +1,45 @@
 import React from 'react';
 import moviePhoto from '../assets/movie.png';
-import todo from '../assets/todo.png';
+import task from '../assets/task.png';
 import tutor from '../assets/tutor.png';
+import flixx from '../assets/flixx.png';
 import eCommerce from '../assets/ecommerce.png';
 import imageGallery from '../assets/image-gallery.png';
 
 const projects = [
   {
-    projectName: 'E-commerce Application',
+    projectName: 'Task Manager',
+    projectImage: task,
+    projectRepoLink: 'https://github.com/rekha0suthar/task-manager',
+    projectDemoLink: 'https://task-simplify-manager.netlify.app/',
+    projectSummary:
+      'A task management application with features like add tasks, edit and delete tasks, Adding due date and marking tasks as completed.',
+  },
+  {
+    projectName: 'E-commerce',
     projectImage: eCommerce,
     projectRepoLink:
       'https://github.com/rekha0suthar/E-commerce-web-application',
     projectDemoLink:
       'https://rekha0suthar.github.io/E-commerce-web-application/',
     projectSummary:
-      'An e-commerce platform with features including product management, user authentication, and responsive design.',
+      'An e-commerce platform with features including product management, and responsive design.',
+  },
+  {
+    projectName: 'Movie Flixx',
+    projectImage: flixx,
+    projectRepoLink: 'https://github.com/rekha0suthar/movie-flixx',
+    projectDemoLink: 'https://flixx-creation.netlify.app/',
+    projectSummary:
+      'Here popular movies and tv shows are showed as cards, clicking on movie/show open its detailed page. Searching is there.',
+  },
+  {
+    projectName: 'Tutor',
+    projectImage: tutor,
+    projectRepoLink: 'https://github.com/rekha0suthar/tutor',
+    projectDemoLink: 'https://awesome-tutor.netlify.app/',
+    projectSummary:
+      'Simple and responsive tutor application, with different section like chapters, summary and contact page.',
   },
   // {
   //   projectName: "Grocery Shopping Application",
@@ -22,37 +47,23 @@ const projects = [
   //   projectRepoLink: "https://github.com/rekha0suthar/grocery-shopping",
   //   projectDemoLink: "",
   // },
+
   {
-    projectName: 'Todo',
-    projectImage: todo,
-    projectRepoLink: 'https://github.com/rekha0suthar/todo',
-    projectDemoLink: 'https://todos-js-project.netlify.app/',
+    projectName: 'Movie Search',
+    projectImage: moviePhoto,
+    projectRepoLink: 'https://github.com/rekha0suthar/movie-app',
+    projectDemoLink: 'https://movie-creation.netlify.app/',
     projectSummary:
-      'This is simple Todo application, where we can add new todo, delete them and mark completed todo by clicking on todo',
+      'We can search movie, and movies will be fetched from api, showed as cards, clicking on movie open its detailed page.',
   },
+
   {
-    projectName: 'Tutor Application',
-    projectImage: tutor,
-    projectRepoLink: 'https://github.com/rekha0suthar/tutor',
-    projectDemoLink: 'https://awesome-tutor.netlify.app/',
-    projectSummary:
-      'Simple and responsive tutor application, with different section like chapters, summary and contact page.',
-  },
-  {
-    projectName: 'Image Gallery Application',
+    projectName: 'Image Gallery',
     projectImage: imageGallery,
     projectRepoLink: 'https://github.com/rekha0suthar/lumina-creative',
     projectDemoLink: 'https://lumina-creative-image-gallery.netlify.app/',
     projectSummary:
       'Application containing lots of images organised properly. Different creative pages. Responsive pages can fit on any screen size.',
-  },
-  {
-    projectName: 'Movie Search Application',
-    projectImage: moviePhoto,
-    projectRepoLink: 'https://github.com/rekha0suthar/Movie_Search',
-    projectDemoLink: 'https://rekha0suthar.github.io/Movie_Search/',
-    projectSummary:
-      'We can search movie, and movies will be fetched from api, showed below as cards, clicking on movie open its detailed page.',
   },
 ];
 
@@ -71,7 +82,7 @@ const Projects = () => {
                 <h2>{project.projectName}</h2>
                 <p>{project.projectSummary}</p>
                 <a
-                  href={project.projectRepoLink}
+                  href={project.projectDemoLink}
                   target="_blank"
                   rel="noreferrer"
                   className="live-btn"
