@@ -34,8 +34,11 @@ const Navbar = () => {
   return (
     <div className="navbar">
       {!isDesktop && (
-        <div className="nav-menu" onClick={() => setShow(!show)}>
-          <MdMenu />
+        <div className="bar">
+          <h2>Rekha's Portfolio</h2>
+          <div className="nav-menu" onClick={() => setShow(!show)}>
+            <MdMenu />
+          </div>
         </div>
       )}
       {(isDesktop || show) && (
