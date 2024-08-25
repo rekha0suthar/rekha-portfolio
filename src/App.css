@@ -1,14 +1,8 @@
 body {
-  background: rgb(238, 174, 202);
-  background: radial-gradient(
-    circle,
-    rgba(238, 174, 202, 1) 0%,
-    rgba(148, 187, 233, 1) 21%
-  );
-
-  --coral-color: coral;
-  --cadetblue-color: cadetblue;
-  --dark-cadetblue-color: rgb(4, 88, 80);
+  background-color: #eaeaea;
+  --dark-blue-color: #002f6c;
+  --golden-color: goldenrod;
+  --bg-color: #f4f4f4;
   --max-width-1100: 1100px;
 }
 
@@ -21,79 +15,78 @@ body {
 }
 
 .navbar {
-  background: rgb(238, 174, 202);
-  background: radial-gradient(
-    circle,
-    rgba(238, 174, 202, 1) 0%,
-    rgba(148, 187, 233, 1) 21%
-  );
+  background-color: var(--dark-blue-color);
   box-shadow: 0px 2px 6px #6b6a6a;
   padding: 1em;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
-  /* display: flex;
-  justify-content: space-between; */
+  min-height: 30px;
+}
+
+.nav-menu {
+  color: white;
+  font-size: 30px;
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  display: none;
 }
 
 .navbar div {
   padding: 10px 20px;
 }
 
-/* .navbar img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-} */
-
 .nav-item {
-  color: #000;
+  color: white;
   text-decoration: none;
   padding: 20px 40px;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 700;
   cursor: pointer;
 }
 
 .active {
-  color: var(--coral-color);
+  color: var(--golden-color);
   cursor: pointer;
 }
 
 /* Home Section */
 
 .home-section {
-  display: flex;
-  justify-content: center;
-  gap: 70px;
-  margin: 150px auto 100px auto;
-}
-
-.image-section img {
-  border-radius: 50%;
-  width: 150px;
-  height: 150px;
+  display: block;
+  margin: 200px auto 100px auto;
+  max-width: 1100px;
 }
 
 .detail-section {
   text-align: center;
+  width: 100%;
 }
 
 .detail-section p {
   font-size: 24px;
-  max-width: 340px;
   margin-top: 20px;
 }
 
+.header strong {
+  text-transform: uppercase;
+}
+
 .name {
-  color: var(--coral-color);
+  color: var(--dark-blue-color);
   font-size: 28px;
 }
 
 .title {
-  color: var(--dark-cadetblue-color);
+  font-size: 18px !important;
+  color: #dc143c;
+}
+
+.tagline {
   font-size: 28px;
+  color: rgb(112, 81, 1);
 }
 
 .socila-icon {
@@ -106,15 +99,26 @@ body {
   height: 40px !important;
 }
 
+.resume {
+  text-decoration: none;
+  color: var(--golden-color);
+  border: 1px solid var(--golden-color);
+  border-radius: 30px;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
 /* Common CSS */
 
 .experience-section,
 .projects-section,
 .skill-section,
 .education-section,
-.about-section {
+.about-section,
+.contact-section {
   max-width: var(--max-width-1100);
-  margin: 80px auto;
+  margin: 120px auto;
   text-align: start;
 }
 
@@ -122,16 +126,19 @@ body {
 .projects-section h1,
 .skill-section h1,
 .education-section h1,
-.about-section h1 {
+.about-section h1,
+.contact-section h1 {
   text-align: center;
+  text-transform: uppercase;
 }
 
 .experience-section hr,
 .projects-section hr,
 .skill-section hr,
 .education-section hr,
-.about-section hr {
-  border: 2px solid var(--cadetblue-color);
+.about-section hr,
+.contact-section hr {
+  border: 2px solid var(--dark-blue-color);
   width: 100px;
   margin-top: -20px;
   margin-bottom: 30px;
@@ -162,23 +169,45 @@ body {
 
 /* About Section */
 
-.about-section div p {
-  max-width: 60%;
+.about-section div .about {
+  max-width: 80%;
   margin: auto;
   font-size: 20px;
-  font-style: italic;
   line-height: 1.5;
-  text-align: center;
-  background-color: rgb(248, 238, 225);
-  color: var(--dark-cadetblue-color);
-  padding: 40px 20px;
-  border-radius: 10px;
-  transition: 1s;
+  text-align: left;
+  background-color: var(--bg-color);
+  color: #3a3b2f;
+  padding: 20px 20px;
+  box-shadow: 0px 4px 6px #ccc;
 }
 
-.about-section div p:hover {
-  transform: scale(1.1);
-  z-index: 2;
+.about-section ul {
+  margin-top: 0px;
+}
+
+.about-details {
+  display: flex;
+}
+
+.image-section img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin-right: 30px;
+  margin-top: 70px;
+}
+
+.about-footer {
+  display: flex;
+}
+
+.about-footer .first {
+  flex: 2.5;
+  margin-right: 20px;
+}
+
+.about-footer .second {
+  flex: 1;
 }
 
 /* Experience section */
@@ -186,6 +215,7 @@ body {
 .detail-header {
   display: flex;
   padding: 10px;
+  background-color: var(--bg-color);
 }
 
 .detail-header img {
@@ -201,8 +231,7 @@ hr {
 
 h4 {
   margin-top: -7px;
-  font-style: italic;
-  color: rgb(3, 141, 146);
+  color: var(--dark-blue-color);
 }
 
 h3 {
@@ -222,6 +251,9 @@ ul {
 }
 
 /* Projects  Section*/
+.project-header {
+  background-color: var(--bg-color);
+}
 
 .project-header img {
   width: 100%;
@@ -229,11 +261,7 @@ ul {
 }
 
 .project-header h2 {
-  color: rgb(3, 141, 146);
-}
-
-.project-header p {
-  font-style: italic;
+  color: var(--dark-blue-color);
 }
 
 .project-header div {
@@ -259,20 +287,20 @@ ul {
 .live-btn,
 .repo-btn {
   padding: 3px 10px;
-  border-radius: 5px;
+  border-radius: 10px;
   text-decoration: none;
   font-size: 18px;
   font-weight: bold;
 }
 
 .live-btn {
-  border: 1px solid var(--cadetblue-color);
-  color: var(--cadetblue-color);
+  border: 1px solid var(--dark-blue-color);
+  color: var(--dark-blue-color);
 }
 
 .repo-btn {
-  border: 1px solid var(--coral-color);
-  color: var(--coral-color);
+  border: 1px solid var(--golden-color);
+  color: var(--golden-color);
 }
 
 .live-btn:hover {
@@ -281,14 +309,14 @@ ul {
 }
 
 .repo-btn:hover {
-  background-color: var(--coral-color);
+  background-color: var(--golden-color);
   color: white;
 }
 
 /* Skills Section */
 
 .skill-wrapper {
-  background-color: rgba(204, 204, 204, 0.2);
+  background-color: var(--bg-color);
   box-shadow: 0px 0px 6px #a09e9e;
   padding: 10px 20px;
   transition: 1s;
@@ -325,7 +353,7 @@ progress[value]::-webkit-progress-bar {
 progress[value]::-webkit-progress-value {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  background-color: rgb(78, 132, 233);
+  background-color: var(--dark-blue-color);
   background-size: 56.57px 56.57px;
 }
 
@@ -343,7 +371,7 @@ progress[value]::-moz-progress-bar {
 }
 
 .education-details {
-  background-color: rgb(218, 227, 240);
+  background-color: var(--bg-color);
   box-shadow: 0px 0px 6px #ccc;
   padding: 20px;
   display: grid;
@@ -359,8 +387,8 @@ progress[value]::-moz-progress-bar {
 
 .education-projects div a {
   margin-top: -5px !important;
-  text-decoration: none;
   font-size: 16px;
+  color: var(--dark-blue-color);
 }
 
 .education-projects ul li {
@@ -368,15 +396,129 @@ progress[value]::-moz-progress-bar {
   line-height: 1.8;
 }
 
+/* Contact Section */
+.contact-section {
+  margin-bottom: 250px;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 100%;
+  margin: 0 auto;
+  background-color: var(--bg-color);
+  padding: 10px;
+}
+
+.contact-form-container,
+.contact-details {
+  flex: 1;
+  padding: 20px;
+}
+
+.contact-form-container {
+  margin-right: 20px;
+}
+
+.contact-details h2 {
+  margin-bottom: 20px;
+  margin-top: 0px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  font-size: 16px;
+}
+
+.contact-form textarea {
+  height: 120px;
+  resize: none;
+}
+
+.contact-form button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Contact Details */
+.contact-details h2 {
+  margin-bottom: 20px;
+}
+
+.contact-details ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.contact-details ul li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.contact-details ul li a {
+  color: var(--dark-blue-color);
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.contact-details ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer {
+  background-color: var(--dark-blue-color);
+  box-shadow: 0px 2px 6px #6b6a6a;
+  padding: 1em;
+  bottom: 0;
+  width: 100%;
+  /* z-index: 1000; */
+  min-height: 30px;
+}
+
 @media screen and (max-width: 900px) {
   .navbar .nav-item {
-    display: inline-block;
+    display: block;
+  }
+
+  .nav-menu {
+    display: block;
   }
 
   .home-section {
     display: block;
     text-align: center;
     padding: 20px;
+  }
+
+  .about-details,
+  .contact-container {
+    display: block;
+    text-align: center;
+    margin-left: 40px;
+  }
+
+  .about-footer {
+    display: block;
+  }
+
+  .about-footer .first {
+    margin-right: auto;
   }
 
   .detail-section p {
@@ -398,5 +540,9 @@ progress[value]::-moz-progress-bar {
   .education-details {
     max-width: 80%;
     margin: auto;
+  }
+
+  .contact-section {
+    margin-bottom: 100px;
   }
 }

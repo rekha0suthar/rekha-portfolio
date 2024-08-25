@@ -1,24 +1,29 @@
 import React from 'react';
-import photo from '../assets/photo.png';
 import { SocialIcon } from 'react-social-icons';
 
 const Home = () => {
   return (
     <div className="home-section" id="home">
-      <div className="image-section">
-        <img src={photo} alt="" />
-      </div>
       <div className="detail-section">
-        <p>
-          Hello, Myself <strong className="name">Rekha Suthar</strong>, I am a{' '}
-          <strong className="title">Software Developer</strong>
+        <p className="header">
+          Hi, I am <strong className="name">Rekha Suthar</strong>
         </p>
+        <p className="title">Full Stack Developer</p>
+        <p className="tagline">'''Code with Purpose, Build with Passion'''</p>
         <div className="socila-icon">
           <SocialIcon
             url="https://www.linkedin.com/in/rekha0suthar/"
             target="_blank"
           />{' '}
           <SocialIcon url="https://github.com/rekha0suthar/" target="_blank" />
+          <a
+            href="https://docs.google.com/document/d/1dKSwD668M6GD6FTFDKFOjViHUhrN7JN9TNpQ07_APF0/edit?usp=sharing"
+            target="_blank"
+            rel="noreferrer"
+            className="resume"
+          >
+            Resume
+          </a>
         </div>
       </div>
     </div>
