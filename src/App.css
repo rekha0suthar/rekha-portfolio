@@ -78,7 +78,7 @@ body {
 }
 
 .detail-section p {
-  font-size: 24px;
+  font-size: 28px;
   margin-top: 20px;
 }
 
@@ -88,16 +88,16 @@ body {
 
 .name {
   color: var(--dark-blue-color);
-  font-size: 28px;
+  font-size: 32px;
 }
 
 .title {
-  font-size: 18px !important;
+  font-size: 22px !important;
   color: #dc143c;
 }
 
 .tagline {
-  font-size: 28px;
+  font-size: 32px;
   color: rgb(112, 81, 1);
 }
 
@@ -182,7 +182,7 @@ body {
 /* About Section */
 
 .about-section div .about {
-  max-width: 80%;
+  max-width: 100%;
   margin: auto;
   font-size: 20px;
   line-height: 1.5;
@@ -524,6 +524,9 @@ progress[value]::-moz-progress-bar {
     margin-top: 150px;
   }
 
+  .about-section div .about {
+    max-width: 80%;
+  }
   .about-details {
     display: block;
     text-align: center;
