@@ -32,7 +32,7 @@ const experiences = [
     logo: 'https://images.crunchbase.com/image/upload/c_pad,h_256,w_256,f_auto,q_auto:eco,dpr_1/v1494841318/ljxjdluf0nhvinmdcwoq.png',
     summary: [
       'Designed engaging, responsive user interfaces to ensure seamless functionality across devices.',
-      'Enhanced website interactivity and visual appeal by implementing personalized information sections and dynamic testimonials using sliding cards and modals.,
+      'Enhanced website interactivity and visual appeal by implementing personalized information sections and dynamic testimonials using sliding cards and modals.',
     ],
   },
 ];
