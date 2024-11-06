@@ -5,15 +5,23 @@ import tutor from '../assets/tutor.png';
 import flixx from '../assets/flixx.png';
 import eCommerce from '../assets/ecommerce.png';
 import imageGallery from '../assets/image-gallery.png';
-
+import expense from '../assets/expense.png';
 const projects = [
   {
     projectName: 'Task Manager',
     projectImage: task,
     projectRepoLink: 'https://github.com/rekha0suthar/task-manager',
-    projectDemoLink: 'https://task-simplify-manager.netlify.app/',
+    projectDemoLink: 'https://task-manager-app-virid.vercel.app/',
     projectSummary:
       'A task management application with features like add tasks, edit and delete tasks, Adding due date and marking tasks as completed.',
+  },
+  {
+    projectName: 'Expense Tracker',
+    projectImage: expense,
+    projectRepoLink: 'https://github.com/rekha0suthar/expense-trackor',
+    projectDemoLink: 'https://expense-tracker-app-pearl-ten.vercel.app/',
+    projectSummary:
+      'A expense tracking application with features like add, expense, add budget for expense, see total expenses and remaining budget.',
   },
   {
     projectName: 'E-commerce',

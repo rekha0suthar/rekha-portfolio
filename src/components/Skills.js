@@ -5,7 +5,7 @@ const skills = [
     frontend: [
       {
         skill: 'Javascript',
-        level: 7,
+        level: 8,
       },
       {
         skill: 'Reactjs',
@@ -14,7 +14,7 @@ const skills = [
 
       {
         skill: 'Typescript',
-        level: 5,
+        level: 6,
       },
 
       {
@@ -30,15 +30,15 @@ const skills = [
     backend: [
       {
         skill: 'REST APIs',
-        level: 6,
+        level: 8,
       },
       {
         skill: 'Nodejs',
-        level: 3,
+        level: 7,
       },
       {
         skill: 'Express',
-        level: 3,
+        level: 7,
       },
       {
         skill: 'Flask/Python',
@@ -48,15 +48,19 @@ const skills = [
     databases: [
       {
         skill: 'MongoDB',
-        level: 1,
+        level: 7,
       },
       {
         skill: 'SQL/Sqlite',
-        level: 3,
+        level: 7,
       },
       {
         skill: 'Firebase',
-        level: 3,
+        level: 6,
+      },
+      {
+        skill: 'AWS',
+        level: 5,
       },
     ],
   },

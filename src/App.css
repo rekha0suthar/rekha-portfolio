@@ -316,7 +316,7 @@ ul {
 }
 
 .live-btn:hover {
-  background-color: var(--cadetblue-color);
+  background-color: var(--dark-blue-color);
   color: white;
 }
 

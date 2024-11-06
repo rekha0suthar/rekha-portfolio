@@ -15,7 +15,7 @@ const About = () => {
             </div>
             <span>
               <p>
-                Passionate and obsessed, Software Developer with 2 years of
+                Passionate and adaptable, Software Developer with 2 years of
                 experience in diverse domains such as Software Development and
                 Team Management. I hold a Bachelor's degree in Data Science and
                 Programming, which has provided me with a strong foundation in

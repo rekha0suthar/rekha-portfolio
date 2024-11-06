@@ -17,7 +17,7 @@ const Home = () => {
           />{' '}
           <SocialIcon url="https://github.com/rekha0suthar/" target="_blank" />
           <a
-            href="https://docs.google.com/document/d/1dKSwD668M6GD6FTFDKFOjViHUhrN7JN9TNpQ07_APF0/edit?usp=sharing"
+            href="https://flowcv.com/resume/pm3fpn2i5w"
             target="_blank"
             rel="noreferrer"
             className="resume"
