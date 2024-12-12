@@ -6,12 +6,31 @@ import flixx from '../assets/flixx.png';
 import eCommerce from '../assets/ecommerce.png';
 import imageGallery from '../assets/image-gallery.png';
 import expense from '../assets/expense.png';
+import secret from '../assets/social.png';
+import insta from '../assets/insta.png';
+
 const projects = [
+  {
+    projectName: 'Insta Clone',
+    projectImage: insta,
+    projectRepoLink: 'https://github.com/rekha0suthar/insta-clone',
+    projectDemoLink: 'https://insta-clone-eight-jade.vercel.app/',
+    projectSummary:
+      'Insta clone where users can register and see all feeds, add/edit/delete new post, like and comment, Follow/Unfollow others post.',
+  },
+  {
+    projectName: 'Secret Share',
+    projectImage: secret,
+    projectRepoLink: 'https://github.com/rekha0suthar/secret-sphere',
+    projectDemoLink: 'https://secret-sphere.vercel.app/',
+    projectSummary:
+      'Simple Secret sharing application. Users can create account and share their secret and others will not know whos secret is.',
+  },
   {
     projectName: 'Task Manager',
     projectImage: task,
     projectRepoLink: 'https://github.com/rekha0suthar/task-manager',
-    projectDemoLink: 'https://task-manager-app-virid.vercel.app/',
+    projectDemoLink: 'https://taskify-two-umber.vercel.app/',
     projectSummary:
       'A task management application with features like add tasks, edit and delete tasks, Adding due date and marking tasks as completed.',
   },

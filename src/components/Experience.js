@@ -8,10 +8,10 @@ const experiences = [
     workingPeriod: 'FEB 2023 - NOV 2023',
     logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRI9134w2feR4zJJ4_23uJYxNF7m3DWWYG1JA&s',
     summary: [
-      'Led a 15-member team for image segmentation and object detection, boosting productivity by 30%.', 
-      'Contributed to open-source data annotation platform called CVAT.', 
-      'Developed features such as allows managers to directly import data from AWS S3, one-click annotation, easy drawing, and label customization, improving work speed and quality by 5%.',
-      'Facilitated daily meetings to streamline communication, track progress, and resolve issues efficiently.',
+      'Hiring and managing a productive 15-member team for image segmentation and object detection increased productivity by 30%.',
+      'Utilizing and customizing the CVAT tool as per requirements using MERN stack annotations increased accuracy of tools by 10% and saved 15% of time.',
+      'Implemented features to improve work speed and quality of the work to enhance model performance.',
+      'Conducting daily meetings to ensure smooth communication, progress updates, and issue resolution.',
     ],
   },
   {
