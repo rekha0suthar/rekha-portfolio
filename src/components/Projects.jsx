@@ -112,7 +112,7 @@ const Projects = () => {
         {projects.map((project, idx) => {
           return (
             <div className="project-header" key={idx}>
-              <img src={project.projectImage} alt="" />
+              <img src={project.projectImage} alt={project.projectName} />
               <hr />
               <div>
                 <h2>{project.projectName}</h2>

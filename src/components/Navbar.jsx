@@ -8,6 +8,7 @@ const navList = [
   { title: 'Experience', link: 'experience' },
   { title: 'Projects', link: 'projects' },
   { title: 'Skills', link: 'skills' },
+  { title: 'Certificates', link: 'certificates' },
   { title: 'Education', link: 'education' },
   { title: 'Contact', link: 'contact' },
 ];
