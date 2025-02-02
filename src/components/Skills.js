@@ -11,6 +11,14 @@ const skills = [
         skill: 'Reactjs',
         level: 8,
       },
+      {
+        skill: 'Redux',
+        level: 5,
+      },
+      {
+        skill: 'Context API',
+        level: 9,
+      },
 
       {
         skill: 'Typescript',
@@ -41,7 +49,15 @@ const skills = [
         level: 7,
       },
       {
-        skill: 'Flask/Python',
+        skill: 'JWT',
+        level: 7,
+      },
+      {
+        skill: 'Flask',
+        level: 5,
+      },
+      {
+        skill: 'Python',
         level: 5,
       },
     ],

@@ -8,8 +8,17 @@ import imageGallery from '../assets/image-gallery.png';
 import expense from '../assets/expense.png';
 import secret from '../assets/social.png';
 import insta from '../assets/insta.png';
+import bankfresh from '../assets/bankfresh.png';
 
 const projects = [
+  {
+    projectName: 'Bankfresh',
+    projectImage: bankfresh,
+    projectRepoLink: 'https://github.com/rekha0suthar/bankfresh',
+    projectDemoLink: 'https://bankfresh-netbanking.vercel.app/',
+    projectSummary:
+      'A netbanking application with Online bank account opening, user registeration, Balance, Account Statement, Money Transfer, Card Management and Utility Bills.',
+  },
   {
     projectName: 'Insta Clone',
     projectImage: insta,
