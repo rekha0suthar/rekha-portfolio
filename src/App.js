@@ -9,19 +9,30 @@ import Navbar from './components/Navbar';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Certificates from './components/Certificates';
+import ParticlesBackground from './components/ParticlesBackground';
 
 const App = () => {
   return (
     <div className="App">
+      {/* Particles should be in the background */}
+      <ParticlesBackground />
+
+      {/* Navbar (Fixed at the top) */}
       <Navbar />
-      <Home />
-      <About />
-      <Experience />
-      <Projects />
-      <Skills />
-      <Certificates />
-      <Education />
-      <Contact />
+
+      {/* Main Sections */}
+      <main>
+        <Home />
+        <About />
+        <Experience />
+        <Projects />
+        <Skills />
+        <Certificates />
+        <Education />
+        <Contact />
+      </main>
+
+      {/* Footer */}
       <Footer />
     </div>
   );

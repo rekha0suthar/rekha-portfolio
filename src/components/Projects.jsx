@@ -9,6 +9,7 @@ import expense from '../assets/expense.png';
 import secret from '../assets/social.png';
 import insta from '../assets/insta.png';
 import bankfresh from '../assets/bankfresh.png';
+import '../styles/Projects.css';
 
 const projects = [
   {
@@ -77,12 +78,6 @@ const projects = [
     projectSummary:
       'Simple and responsive tutor application, with different section like chapters, summary and contact page.',
   },
-  // {
-  //   projectName: "Grocery Shopping Application",
-  //   projectImage: "",
-  //   projectRepoLink: "https://github.com/rekha0suthar/grocery-shopping",
-  //   projectDemoLink: "",
-  // },
 
   {
     projectName: 'Movie Search',
@@ -105,38 +100,41 @@ const projects = [
 
 const Projects = () => {
   return (
-    <div className="projects-section" id="projects">
-      <h1>Projects</h1>
-      <hr />
-      <div className="projects-detail">
-        {projects.map((project, idx) => {
-          return (
-            <div className="project-header" key={idx}>
-              <img src={project.projectImage} alt={project.projectName} />
-              <hr />
-              <div>
-                <h2>{project.projectName}</h2>
-                <p>{project.projectSummary}</p>
+    <div className="section-container" id="projects">
+      <h1 className="section-title">Projects</h1>
+      <div className="title-underline"></div>
+      <div className="projects-grid">
+        {projects.map((project, idx) => (
+          <div className="project-card" key={idx}>
+            <div className="laptop-frame">
+              <div className="laptop-screen">
+                <img src={project.projectImage} alt={project.projectName} />
+              </div>
+            </div>
+            <div className="project-info">
+              <h3>{project.projectName}</h3>
+              <p>{project.projectSummary}</p>
+              <div className="project-links">
                 <a
                   href={project.projectDemoLink}
                   target="_blank"
                   rel="noreferrer"
-                  className="live-btn"
+                  className="demo-btn"
                 >
-                  Demo
-                </a>{' '}
+                  Live Demo
+                </a>
                 <a
                   href={project.projectRepoLink}
                   target="_blank"
                   rel="noreferrer"
                   className="repo-btn"
                 >
-                  Code
+                  GitHub
                 </a>
               </div>
             </div>
-          );
-        })}
+          </div>
+        ))}
       </div>
     </div>
   );

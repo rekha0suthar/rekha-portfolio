@@ -1,0 +1,252 @@
+/* Timeline customization */
+.vertical-timeline {
+  width: 95%;
+  max-width: 1200px;
+}
+
+.vertical-timeline-element {
+  margin: 2rem 0;
+}
+
+.vertical-timeline-element-content {
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 15px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 2rem !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vertical-timeline-element-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Company title styling */
+.vertical-timeline-element-content h2 {
+  color: #4a9eff;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Role title styling */
+.vertical-timeline-element-content h4 {
+  color: #a0a0a0;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Responsibilities list styling */
+.vertical-timeline-element-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.vertical-timeline-element-content li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  font-size: 1.2rem;
+}
+
+.vertical-timeline-element-content li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: #4a9eff;
+}
+
+/* Tech stack styling */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tech-tag {
+  background: rgba(74, 158, 255, 0.1);
+  color: #4a9eff;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+  background: rgba(74, 158, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Timeline date styling */
+.vertical-timeline-element-date {
+  color: #4a9eff !important;
+  font-weight: 600;
+  opacity: 0.8;
+  font-size: 1rem !important;
+  text-shadow: 0 0 10px rgba(74, 158, 255, 0.3);
+  margin: 0 1.5rem !important;
+}
+
+/* Timeline line and dot styling */
+.vertical-timeline::before {
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    #4a9eff,
+    #4a9eff,
+    transparent
+  ) !important;
+  width: 3px !important;
+}
+
+.vertical-timeline-element-icon {
+  box-shadow: 0 0 0 4px #4a9eff, inset 0 2px 0 rgba(0, 0, 0, 0.08),
+    0 3px 0 4px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Animations */
+.vertical-timeline-element {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.vertical-timeline-element:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.vertical-timeline-element:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.vertical-timeline-element:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1170px) {
+  .vertical-timeline--two-columns
+    .vertical-timeline-element-content
+    .vertical-timeline-element-date {
+    margin-top: 1rem !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    color: #bdb9b9 !important;
+    font-weight: 600 !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .vertical-timeline-element-content {
+    padding: 1.75rem !important;
+  }
+
+  .vertical-timeline-element-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .vertical-timeline-element-content h4 {
+    font-size: 1.05rem;
+  }
+
+  .vertical-timeline-element-content li {
+    font-size: 1.2rem;
+  }
+
+  .tech-tag {
+    font-size: 0.85rem;
+    padding: 0.35rem 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .experience-section {
+    padding: 3rem 1rem;
+  }
+
+  .vertical-timeline-element-content {
+    padding: 1.5rem !important;
+  }
+
+  .vertical-timeline-element-content h2 {
+    font-size: 1.3rem;
+  }
+
+  .vertical-timeline-element-content h4 {
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .vertical-timeline-element-content li {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .tech-stack {
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+    gap: 0.4rem;
+  }
+
+  .tech-tag {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-section {
+    padding: 2rem 0.75rem;
+  }
+
+  .vertical-timeline-element-content {
+    padding: 1.25rem !important;
+  }
+
+  .vertical-timeline-element-content h2 {
+    font-size: 1.2rem;
+  }
+
+  .vertical-timeline-element-content h4 {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+
+  .vertical-timeline-element-content li {
+    font-size: 1.2rem;
+    padding-left: 1.25rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .tech-stack {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    gap: 0.3rem;
+  }
+
+  .tech-tag {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.7rem;
+  }
+
+  .vertical-timeline-element-date {
+    font-size: 0.9rem !important;
+  }
+}

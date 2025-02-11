@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
+import '../styles/Contact.css';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -7,15 +8,12 @@ const Contact = () => {
     email: '',
     message: '',
   });
-  const [loading, setLoading] = useState(false);
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const [status, setStatus] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
+    setStatus('sending');
+
     await emailjs
       .send(
         'service_dz94g3i', // Replace with your EmailJS service ID
@@ -29,88 +27,83 @@ const Contact = () => {
         'RE3kg8Nk5TQPwx6lj' // Replace with your EmailJS public key
       )
       .then(
-        (result) => {
-          setLoading(false);
-          alert('Message sent successfully!');
+        (response) => {
+          setStatus('success');
           setFormData({ name: '', email: '', message: '' });
         },
         (error) => {
-          setLoading(false);
-          alert('Failed to send message. Please try again.');
-          console.error(error);
+          setStatus('error');
         }
       );
   };
-  return (
-    <section id="contact" className="contact-section">
-      <h1>Contact Me</h1>
-      <hr />
 
-      <div className="contact-container">
-        <div className="contact-form-container">
-          <form className="contact-form" onSubmit={handleSubmit}>
+  return (
+    <div className="section-container" id="contact">
+      <h1 className="section-title">Contact</h1>
+      <div className="title-underline"></div>
+
+      <div className="contact-container glass-card fade-in-up">
+        <form className="contact-form" onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="name">Name</label>
             <input
               type="text"
-              name="name"
-              placeholder="Your Name"
+              id="name"
+              className="form-control"
               value={formData.name}
-              onChange={handleChange}
+              onChange={(e) =>
+                setFormData({ ...formData, name: e.target.value })
+              }
               required
             />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
             <input
               type="email"
-              name="email"
-              placeholder="Your Email"
+              id="email"
+              className="form-control"
               value={formData.email}
-              onChange={handleChange}
+              onChange={(e) =>
+                setFormData({ ...formData, email: e.target.value })
+              }
               required
             />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="message">Message</label>
             <textarea
-              name="message"
-              placeholder="Your Message"
+              id="message"
+              className="form-control"
               value={formData.message}
-              onChange={handleChange}
+              onChange={(e) =>
+                setFormData({ ...formData, message: e.target.value })
+              }
               required
-            ></textarea>
-            <button type="submit">
-              {loading ? 'Sending .....' : 'Send Message'}
-            </button>
-          </form>
-        </div>
-        <div className="contact-details">
-          <h2>Get in Touch</h2>
-          <ul>
-            <li>
-              <strong> Email: </strong>
-              <a href="mailto:rekha0suthar@gmail.com">rekha0suthar@gmail.com</a>
-            </li>
-            <li>
-              <strong>LinkedIn: </strong>
-              <a
-                href="https://linkedin.com/in/rekha0suthar"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                linkedin.com/in/rekha0suthar
-              </a>
-            </li>
-            <li>
-              <strong>GitHub: </strong>
-              <a
-                href="https://github.com/rekha0suthar"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                github.com/rekha0suthar
-              </a>
-            </li>
-            <li>
-              <strong>Location: </strong>Bangalore, India
-            </li>
-          </ul>
-        </div>
+            />
+          </div>
+
+          <button
+            type="submit"
+            className="submit-btn"
+            disabled={status === 'sending'}
+          >
+            {status === 'sending' ? 'Sending...' : 'Send Message'}
+          </button>
+
+          {status === 'success' && (
+            <div className="message success">Message sent successfully!</div>
+          )}
+          {status === 'error' && (
+            <div className="message error">
+              Failed to send message. Please try again.
+            </div>
+          )}
+        </form>
       </div>
-    </section>
+    </div>
   );
 };
 
