@@ -9,9 +9,18 @@ import expense from '../assets/expense.png';
 import secret from '../assets/social.png';
 import insta from '../assets/insta.png';
 import bankfresh from '../assets/bankfresh.png';
+import shortify from '../assets/shortify.png';
 import '../styles/Projects.css';
 
 const projects = [
+  {
+    projectName: 'Shortify',
+    projectImage: shortify,
+    projectRepoLink: 'https://github.com/rekha0suthar/url-shorten',
+    projectDemoLink: 'https://shortify-nu.vercel.app/',
+    projectSummary:
+      'Shortify is a professional and user-friendly URL shortening application designed to help users create, manage, and analyze short links effortlessly.',
+  },
   {
     projectName: 'Bankfresh',
     projectImage: bankfresh,
@@ -19,6 +28,14 @@ const projects = [
     projectDemoLink: 'https://bankfresh-netbanking.vercel.app/',
     projectSummary:
       'A netbanking application with Online bank account opening, user registeration, Balance, Account Statement, Money Transfer, Card Management and Utility Bills.',
+  },
+  {
+    projectName: 'Taskify',
+    projectImage: task,
+    projectRepoLink: 'https://github.com/rekha0suthar/task-manager',
+    projectDemoLink: 'https://taskify-two-umber.vercel.app/',
+    projectSummary:
+      'A task management application for efficient daily task tracking, with user secure authentication, task creation, edition, deletion, and completion tracking.',
   },
   {
     projectName: 'Insta Clone',
@@ -29,21 +46,14 @@ const projects = [
       'Insta clone where users can register and see all feeds, add/edit/delete new post, like and comment, Follow/Unfollow others post.',
   },
   {
-    projectName: 'Secret Share',
+    projectName: 'Secret Sphere',
     projectImage: secret,
     projectRepoLink: 'https://github.com/rekha0suthar/secret-sphere',
     projectDemoLink: 'https://secret-sphere.vercel.app/',
     projectSummary:
       'Simple Secret sharing application. Users can create account and share their secret and others will not know whos secret is.',
   },
-  {
-    projectName: 'Task Manager',
-    projectImage: task,
-    projectRepoLink: 'https://github.com/rekha0suthar/task-manager',
-    projectDemoLink: 'https://taskify-two-umber.vercel.app/',
-    projectSummary:
-      'A task management application with features like add tasks, edit and delete tasks, Adding due date and marking tasks as completed.',
-  },
+
   {
     projectName: 'Expense Tracker',
     projectImage: expense,
