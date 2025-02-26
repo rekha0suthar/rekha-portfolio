@@ -44,7 +44,7 @@ const experiences = [
     ],
   },
   {
-    companyName: 'Thinkreals',
+    companyName: 'Thinkreal',
     title: 'Frontend Developer Intern',
     workingPeriod: 'JAN 2022 - MAR 2022',
     logo: 'https://images.crunchbase.com/image/upload/c_pad,h_256,w_256,f_auto,q_auto:eco,dpr_1/v1494841318/ljxjdluf0nhvinmdcwoq.png',
