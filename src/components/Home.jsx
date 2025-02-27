@@ -72,7 +72,7 @@ const Home = () => {
 
           {/* Resume Button with Hover Glow */}
           <motion.a
-            href="https://flowcv.com/resume/pm3fpn2i5w"
+            href="https://docs.google.com/document/d/19OqmUb553pcvdMQSLro7EVxCk2ysf4dNw4EDGHIWZdw/edit?usp=sharing"
             target="_blank"
             rel="noreferrer"
             whileHover={{
