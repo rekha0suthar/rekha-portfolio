@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import '../styles/Contact.css';
 
+const SERVICE_ID = process.env.REACT_APP_SERVICE_ID;
+const NOT_TEMPLATE_ID = process.env.REACT_APP_NOT_EMAIL_TEMPLATE_ID;
+const CONF_TEMPLATE_ID = process.env.REACT_APP_CONF_EMAIL_TEMPLATE_ID;
+const PUBLIC_KEY = process.env.REACT_APP_PUBLIC_KEY;
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -16,15 +21,15 @@ const Contact = () => {
 
     await emailjs
       .send(
-        'service_dz94g3i', // Replace with your EmailJS service ID
-        'template_69pvoth', // Replace with your EmailJS template ID
+        SERVICE_ID, // Replace with your EmailJS service ID
+        NOT_TEMPLATE_ID, // Replace with your EmailJS template ID
         {
-          to_name: 'Rekha',
+          to_name: 'Rekha', // your name
           from_name: formData.name,
           reply_to: formData.email,
           message: formData.message,
         },
-        'RE3kg8Nk5TQPwx6lj' // Replace with your EmailJS public key
+        PUBLIC_KEY // Replace with your EmailJS public key
       )
       .then(
         (response) => {
@@ -38,15 +43,15 @@ const Contact = () => {
 
     await emailjs
       .send(
-        'service_dz94g3i', // Replace with your EmailJS service ID
-        'template_3ecgc4f', // Replace with your EmailJS template ID
+        SERVICE_ID, // Replace with your EmailJS service ID
+        CONF_TEMPLATE_ID, // Replace with your EmailJS template ID
         {
           to_name: 'Rekha',
           from_name: formData.name,
           reply_to: formData.email,
           message: formData.message,
         },
-        'RE3kg8Nk5TQPwx6lj' // Replace with your EmailJS public key
+        PUBLIC_KEY // Replace with your EmailJS public key
       )
       .then(
         (response) => {
