@@ -35,6 +35,28 @@ const Contact = () => {
           setStatus('error');
         }
       );
+
+    await emailjs
+      .send(
+        'service_dz94g3i', // Replace with your EmailJS service ID
+        'template_3ecgc4f', // Replace with your EmailJS template ID
+        {
+          to_name: 'Rekha',
+          from_name: formData.name,
+          reply_to: formData.email,
+          message: formData.message,
+        },
+        'RE3kg8Nk5TQPwx6lj' // Replace with your EmailJS public key
+      )
+      .then(
+        (response) => {
+          setStatus('success');
+          setFormData({ name: '', email: '', message: '' });
+        },
+        (error) => {
+          setStatus('error');
+        }
+      );
   };
 
   return (
