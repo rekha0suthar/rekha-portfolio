@@ -10,9 +10,27 @@ import secret from '../assets/social.png';
 import insta from '../assets/insta.png';
 import bankfresh from '../assets/bankfresh.png';
 import shortify from '../assets/shortify.png';
+import seva from '../assets/seva.png';
+import finscope from '../assets/finscope.png';
 import '../styles/Projects.css';
 
 const projects = [
+  {
+    projectName: 'FinScope',
+    projectImage: finscope,
+    projectRepoLink: 'https://github.com/rekha0suthar/budget_tracker',
+    projectDemoLink: 'https://finscope-orpin.vercel.app/',
+    projectSummary:
+      'FinScope is a full-stack personal budgeting application that allows users to track their income, expenses, and monthly budgets with charts.',
+  },
+  {
+    projectName: 'Seva Booking',
+    projectImage: seva,
+    projectRepoLink: 'https://github.com/rekha0suthar/seva-booking-app',
+    projectDemoLink: 'https://seva-booking.vercel.app/',
+    projectSummary:
+      'Seva Booking application where users can log in with their mobile number, browse sevas, select sevas, provide address details, and payment details to confirm bookings',
+  },
   {
     projectName: 'Shortify',
     projectImage: shortify,
