@@ -12,7 +12,7 @@ const experiences = [
   {
     companyName: 'Clutterbot',
     title: 'Full Stack Developer',
-    workingPeriod: 'FEB 2023 - NOV 2023',
+    workingPeriod: 'FEB 2023 - APR 2024',
     logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRI9134w2feR4zJJ4_23uJYxNF7m3DWWYG1JA&s',
     summary: [
       'Developed one-click annotation and label selection features using React.js and Node.js, improving annotation efficiency by 15% and reducing manual selection errors.',
