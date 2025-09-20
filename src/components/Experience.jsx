@@ -9,24 +9,24 @@ import '../styles/Experience.css';
 
 // experience data list
 const experiences = [
-  {
-    companyName: 'Clutterbot',
-    title: 'Full Stack Developer',
-    workingPeriod: 'FEB 2023 - APR 2024',
-    logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRI9134w2feR4zJJ4_23uJYxNF7m3DWWYG1JA&s',
-    summary: [
-      'Developed one-click annotation and label selection features using React.js and Node.js, improving annotation efficiency by 15% and reducing manual selection errors.',
-      'Optimized frontend with lazy loading and caching, decreasing page load time by 10% and improving speed index by 3%',
-      'Refactored code into modular components, reducing debugging and maintenance time by 7%',
-      'Led and managed a 15-member team, improving workflow efficiency and reducing project turnaround time by 10%.',
-      'Facilitated daily stand-ups, enhancing team communication, tracking progress effectively, and reducing blockers by 20%.',
-    ],
-    technologies: ['React', 'Node.js', 'MongoDB', 'Express', 'Python'],
-  },
+  // {
+  //   companyName: 'Clutterbot',
+  //   title: 'Full Stack Developer',
+  //   workingPeriod: 'FEB 2023 - APR 2024',
+  //   logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRI9134w2feR4zJJ4_23uJYxNF7m3DWWYG1JA&s',
+  //   summary: [
+  //     'Developed one-click annotation and label selection features using React.js and Node.js, improving annotation efficiency by 15% and reducing manual selection errors.',
+  //     'Optimized frontend with lazy loading and caching, decreasing page load time by 10% and improving speed index by 3%',
+  //     'Refactored code into modular components, reducing debugging and maintenance time by 7%',
+  //     'Led and managed a 15-member team, improving workflow efficiency and reducing project turnaround time by 10%.',
+  //     'Facilitated daily stand-ups, enhancing team communication, tracking progress effectively, and reducing blockers by 20%.',
+  //   ],
+  //   technologies: ['React', 'Node.js', 'MongoDB', 'Express', 'Python'],
+  // },
   {
     companyName: 'Learngram',
     title: 'Frontend Developer',
-    workingPeriod: 'APR 2022 - JAN 2023',
+    workingPeriod: 'APR 2023 - JAN 2024',
     logo: 'https://images.crunchbase.com/image/upload/c_pad,f_auto,q_auto:eco,dpr_1/oikb5uteskk4bpflrgdi',
     summary: [
       'Enhanced usability by 5% through optimized React components and integration of third-party libraries, improving user interactions.',
@@ -43,17 +43,17 @@ const experiences = [
       'Material-UI',
     ],
   },
-  {
-    companyName: 'Thinkreal',
-    title: 'Frontend Developer Intern',
-    workingPeriod: 'JAN 2022 - MAR 2022',
-    logo: 'https://images.crunchbase.com/image/upload/c_pad,h_256,w_256,f_auto,q_auto:eco,dpr_1/v1494841318/ljxjdluf0nhvinmdcwoq.png',
-    summary: [
-      'Developed interactive, mobile-friendly UI components using React.js, HTML, and CSS, including a responsive navigation bar and modal pop-ups, improving mobile usability',
-      'Optimized images and scripts under mentor guidance, increasing Lighthouse performance score from 70 to 90 by implementing image compression (WebP format) and lazy loading, reducing page load time by 20%.',
-    ],
-    technologies: ['React', 'JavaScript', 'HTML', 'CSS', 'Bootstrap'],
-  },
+  // {
+  //   companyName: 'Thinkreal',
+  //   title: 'Frontend Developer Intern',
+  //   workingPeriod: 'JAN 2022 - MAR 2022',
+  //   logo: 'https://images.crunchbase.com/image/upload/c_pad,h_256,w_256,f_auto,q_auto:eco,dpr_1/v1494841318/ljxjdluf0nhvinmdcwoq.png',
+  //   summary: [
+  //     'Developed interactive, mobile-friendly UI components using React.js, HTML, and CSS, including a responsive navigation bar and modal pop-ups, improving mobile usability',
+  //     'Optimized images and scripts under mentor guidance, increasing Lighthouse performance score from 70 to 90 by implementing image compression (WebP format) and lazy loading, reducing page load time by 20%.',
+  //   ],
+  //   technologies: ['React', 'JavaScript', 'HTML', 'CSS', 'Bootstrap'],
+  // },
 ];
 
 export default function Experience() {

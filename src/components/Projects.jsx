@@ -12,9 +12,18 @@ import bankfresh from '../assets/bankfresh.png';
 import shortify from '../assets/shortify.png';
 import seva from '../assets/seva.png';
 import finscope from '../assets/finscope.png';
+import grocery from '../assets/grocery.png';
 import '../styles/Projects.css';
 
 const projects = [
+  {
+    projectName: 'Grocery-Store',
+    projectImage: grocery,
+    projectRepoLink: 'https://github.com/rekha0suthar/grocery-store',
+    projectDemoLink: 'https://grocery-store-ruddy-eight.vercel.app/',
+    projectSummary:
+      'Engineered a fully-featured, role-based e-commerce platform using the MERN stack, managing data and authentication for three distinct user roles: Customer, Admin, and Store Manager.',
+  },
   {
     projectName: 'FinScope',
     projectImage: finscope,
