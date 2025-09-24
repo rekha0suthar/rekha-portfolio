@@ -16,7 +16,7 @@ const About = () => {
           <div className="profile-intro">
             <h2>Hi, I'm Rekha Suthar!</h2>
             <p>
-             Experienced Frontend Developer with a passion for building scalable and user-friendly web interfaces using React, Redux, and modern JavaScript. Proven ability to optimize performance and create reusable, modular components. Eager to contribute to a team building cutting-edge industrial AI applications.
+             Experienced Frontend Developer with a passion for building scalable and user-friendly web interfaces using React, Redux, and modern JavaScript. Proven ability to optimize performance and create reusable, modular components. Eager to contribute to a team building cutting-edge AI applications.
             </p>
           </div>
         </div>
