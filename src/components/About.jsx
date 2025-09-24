@@ -16,8 +16,7 @@ const About = () => {
           <div className="profile-intro">
             <h2>Hi, I'm Rekha Suthar!</h2>
             <p>
-              A passionate and versatile Full Stack Developer with 2 years of
-              experience in web development and team management.
+             Experienced Frontend Developer with a passion for building scalable and user-friendly web interfaces using React, Redux, and modern JavaScript. Proven ability to optimize performance and create reusable, modular components. Eager to contribute to a team building cutting-edge industrial AI applications.
             </p>
           </div>
         </div>
@@ -54,7 +53,7 @@ const About = () => {
             </div>
           </div>
 
-          <div className="journey-card">
+          {/* <div className="journey-card">
             <div className="card-content">
               <h3>Team Leadership</h3>
               <p>
@@ -62,7 +61,7 @@ const About = () => {
                 environment, and driving projects to successful completion.
               </p>
             </div>
-          </div>
+          </div> */}
 
           <div className="journey-card">
             <div className="card-content">

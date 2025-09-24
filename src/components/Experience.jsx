@@ -30,9 +30,10 @@ const experiences = [
     logo: 'https://images.crunchbase.com/image/upload/c_pad,f_auto,q_auto:eco,dpr_1/oikb5uteskk4bpflrgdi',
     summary: [
       'Enhanced usability by 5% through optimized React components and integration of third-party libraries, improving user interactions.',
-      'Increased accessibility by ensuring WCAG 2.1 compliance, improving navigation and readability for a wider audience.',
+      'Developed and shipped an "Add Class" calendar feature in React, enhancing UX and reducing development time by 2%',
       'Improved frontend performance by 5-7% using Redux for optimized state management, reducing unnecessary re-renders.',
-      'Standardized CSS variables, improving design consistency and reducing styling-related development time by 10-15%.',
+      'Refactored CSS using design tokens (variables), streamlining styling and cutting development time by 10%.',
+      'Implemented lazy loading and code splitting to boost performance, raising SEO score from 70% to 80%.'
     ],
     technologies: [
       'React',
