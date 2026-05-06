@@ -30,6 +30,17 @@
   font-size: 1.5rem;
   color: #a0a0a0 !important;
   margin: 1rem 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.home-credential {
+  display: block;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #8a9bb0;
 }
 
 .social-icon {

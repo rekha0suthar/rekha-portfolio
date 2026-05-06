@@ -33,6 +33,14 @@
   font-size: 1.1rem;
 }
 
+.education-tagline {
+  color: #b8c5d9;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-top: 0.85rem;
+  max-width: 36rem;
+}
+
 .glass-card img {
   width: 100px;
   height: 100px;

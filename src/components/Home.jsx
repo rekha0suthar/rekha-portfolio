@@ -14,18 +14,15 @@ const Home = () => {
         transition={{ duration: 1 }}
         className="detail-section"
       >
-        <h1 style={{ color: 'white' }}>
-          {' '}
-          "Code with Purpose, Build with Passion"
-        </h1>
+        <h1 style={{ color: 'white' }}>Code with purpose, build with passion</h1>
 
         {/* Typewriter Effect for Title */}
         <p className="title">
           <Typewriter
             words={[
               'Full Stack Developer',
-              'MERN Stack Enthusiast',
-              'Creative Coder',
+              'React & Node.js',
+              'IIT Madras · Data Science',
             ]}
             loop={true}
             cursor
@@ -43,6 +40,9 @@ const Home = () => {
           className="tagline "
         >
           <strong>Rekha Suthar</strong>
+          <span className="home-credential">
+            B.Sc. Data Science & Programming · IIT Madras
+          </span>
         </motion.p>
 
         {/* Social Icons with Hover Effect */}

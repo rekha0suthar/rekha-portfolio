@@ -11,6 +11,7 @@ import {
 } from 'react-icons/fa';
 import {
   SiMongodb,
+  SiJavascript,
   SiTypescript,
   SiExpress,
   SiRedux,
@@ -25,7 +26,7 @@ import '../styles/Skills.css';
 const skills = [
   {
     name: 'JavaScript',
-    icon: <SiTypescript color="#F7DF1E" />,
+    icon: <SiJavascript color="#F7DF1E" />,
     color: '#F7DF1E',
   },
   { name: 'React', icon: <FaReact />, color: '#61DAFB' },

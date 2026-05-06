@@ -6,6 +6,44 @@
   border-radius: 2px;
 }
 
+.projects-intro {
+  text-align: center;
+  color: #c8c8c8;
+  max-width: 640px;
+  margin: -2rem auto 2.5rem;
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+.projects-intro a {
+  color: #4a9eff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.projects-intro a:hover {
+  color: #7ab8ff;
+}
+
+.project-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin: 0 0 1rem;
+}
+
+.project-tech-tag {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #b8d7ff;
+  background: rgba(74, 158, 255, 0.12);
+  border: 1px solid rgba(74, 158, 255, 0.35);
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

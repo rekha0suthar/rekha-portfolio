@@ -29,11 +29,11 @@ const experiences = [
     workingPeriod: 'APR 2023 - JAN 2024',
     logo: 'https://images.crunchbase.com/image/upload/c_pad,f_auto,q_auto:eco,dpr_1/oikb5uteskk4bpflrgdi',
     summary: [
-      'Enhanced usability by 5% through optimized React components and integration of third-party libraries, improving user interactions.',
-      'Developed and shipped an "Add Class" calendar feature in React, enhancing UX and reducing development time by 2%',
-      'Improved frontend performance by 5-7% using Redux for optimized state management, reducing unnecessary re-renders.',
-      'Refactored CSS using design tokens (variables), streamlining styling and cutting development time by 10%.',
-      'Implemented lazy loading and code splitting to boost performance, raising SEO score from 70% to 80%.'
+      'Enhanced usability through optimized React components and third‑party integrations, improving key user interactions.',
+      'Shipped an “Add Class” calendar feature in React, improving UX and reducing follow-on implementation rework.',
+      'Improved frontend performance (~5–7%) with Redux-driven state boundaries, trimming unnecessary re-renders.',
+      'Refactored styling with CSS design tokens (variables), improving consistency and cutting styling iteration time (~10%).',
+      'Implemented lazy loading and route-level code splitting, contributing to stronger SEO signals (SEO score ~70% to ~80%).',
     ],
     technologies: [
       'React',

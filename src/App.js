@@ -24,11 +24,11 @@ const App = () => {
       <main>
         <Home />
         <About />
+        <Education />
         <Experience />
         <Projects />
         <Skills />
         <Certificates />
-        <Education />
         <Contact />
       </main>
 

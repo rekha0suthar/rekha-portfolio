@@ -1,12 +1,4 @@
 import React from 'react';
-import moviePhoto from '../assets/movie.png';
-import task from '../assets/task.png';
-import tutor from '../assets/tutor.png';
-import flixx from '../assets/flixx.png';
-import eCommerce from '../assets/ecommerce.png';
-import imageGallery from '../assets/image-gallery.png';
-import expense from '../assets/expense.png';
-import secret from '../assets/social.png';
 import insta from '../assets/insta.png';
 import bankfresh from '../assets/bankfresh.png';
 import shortify from '../assets/shortify.png';
@@ -15,14 +7,16 @@ import finscope from '../assets/finscope.png';
 import grocery from '../assets/grocery.png';
 import '../styles/Projects.css';
 
+/** Curated flagship projects — deeper demos beat a long list of similar CRUD apps. */
 const projects = [
   {
-    projectName: 'Grocery-Store',
+    projectName: 'Grocery Store',
     projectImage: grocery,
     projectRepoLink: 'https://github.com/rekha0suthar/grocery-store',
     projectDemoLink: 'https://grocery-store-ruddy-eight.vercel.app/',
     projectSummary:
-      'Engineered a fully-featured, role-based e-commerce platform using the MERN stack, managing data and authentication for three distinct user roles: Customer, Admin, and Store Manager.',
+      'MERN e-commerce with role-based access for customers, admins, and store managers: catalog, carts, authentication, and admin tooling.',
+    techStack: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT'],
   },
   {
     projectName: 'FinScope',
@@ -30,7 +24,8 @@ const projects = [
     projectRepoLink: 'https://github.com/rekha0suthar/budget_tracker',
     projectDemoLink: 'https://finscope-orpin.vercel.app/',
     projectSummary:
-      'FinScope is a full-stack personal budgeting application that allows users to track their income, expenses, and monthly budgets with charts.',
+      'Full-stack budgeting app: income and expenses, monthly budgets, summaries, and chart-based insights.',
+    techStack: ['React', 'Node.js', 'MongoDB'],
   },
   {
     projectName: 'Seva Booking',
@@ -38,7 +33,8 @@ const projects = [
     projectRepoLink: 'https://github.com/rekha0suthar/seva-booking-app',
     projectDemoLink: 'https://seva-booking.vercel.app/',
     projectSummary:
-      'Seva Booking application where users can log in with their mobile number, browse sevas, select sevas, provide address details, and payment details to confirm bookings',
+      'Booking flow with mobile-number login: browse offerings, reserve sevas, capture address details, and complete payment/checkout.',
+    techStack: ['React', 'Node.js'],
   },
   {
     projectName: 'Shortify',
@@ -46,7 +42,8 @@ const projects = [
     projectRepoLink: 'https://github.com/rekha0suthar/url-shorten',
     projectDemoLink: 'https://shortify-nu.vercel.app/',
     projectSummary:
-      'Shortify is a professional and user-friendly URL shortening application designed to help users create, manage, and analyze short links effortlessly.',
+      'URL shortener with link creation, lightweight management UI, and basic analytics-oriented structure for short-link usage.',
+    techStack: ['React', 'Node.js', 'REST'],
   },
   {
     projectName: 'Bankfresh',
@@ -54,15 +51,8 @@ const projects = [
     projectRepoLink: 'https://github.com/rekha0suthar/bankfresh',
     projectDemoLink: 'https://bankfresh-netbanking.vercel.app/',
     projectSummary:
-      'A netbanking application with Online bank account opening, user registeration, Balance, Account Statement, Money Transfer, Card Management and Utility Bills.',
-  },
-  {
-    projectName: 'Taskify',
-    projectImage: task,
-    projectRepoLink: 'https://github.com/rekha0suthar/task-manager',
-    projectDemoLink: 'https://taskify-two-umber.vercel.app/',
-    projectSummary:
-      'A task management application for efficient daily task tracking, with user secure authentication, task creation, edition, deletion, and completion tracking.',
+      'Netbanking-style demo: account signup, balances, statements, transfers, cards, utilities, and account servicing flows.',
+    techStack: ['React', 'Node.js', 'MongoDB'],
   },
   {
     projectName: 'Insta Clone',
@@ -70,68 +60,8 @@ const projects = [
     projectRepoLink: 'https://github.com/rekha0suthar/insta-clone',
     projectDemoLink: 'https://insta-clone-eight-jade.vercel.app/',
     projectSummary:
-      'Insta clone where users can register and see all feeds, add/edit/delete new post, like and comment, Follow/Unfollow others post.',
-  },
-  {
-    projectName: 'Secret Sphere',
-    projectImage: secret,
-    projectRepoLink: 'https://github.com/rekha0suthar/secret-sphere',
-    projectDemoLink: 'https://secret-sphere.vercel.app/',
-    projectSummary:
-      'Simple Secret sharing application. Users can create account and share their secret and others will not know whos secret is.',
-  },
-
-  {
-    projectName: 'Expense Tracker',
-    projectImage: expense,
-    projectRepoLink: 'https://github.com/rekha0suthar/expense-trackor',
-    projectDemoLink: 'https://expense-tracker-app-pearl-ten.vercel.app/',
-    projectSummary:
-      'A expense tracking application with features like add, expense, add budget for expense, see total expenses and remaining budget.',
-  },
-  {
-    projectName: 'E-commerce',
-    projectImage: eCommerce,
-    projectRepoLink:
-      'https://github.com/rekha0suthar/E-commerce-web-application',
-    projectDemoLink:
-      'https://rekha0suthar.github.io/E-commerce-web-application/',
-    projectSummary:
-      'An e-commerce platform with features including product management, and responsive design.',
-  },
-  {
-    projectName: 'Movie Flixx',
-    projectImage: flixx,
-    projectRepoLink: 'https://github.com/rekha0suthar/movie-flixx',
-    projectDemoLink: 'https://flixx-creation.netlify.app/',
-    projectSummary:
-      'Here popular movies and tv shows are showed as cards, clicking on movie/show open its detailed page. Searching is there.',
-  },
-  {
-    projectName: 'Tutor',
-    projectImage: tutor,
-    projectRepoLink: 'https://github.com/rekha0suthar/tutor',
-    projectDemoLink: 'https://awesome-tutor.netlify.app/',
-    projectSummary:
-      'Simple and responsive tutor application, with different section like chapters, summary and contact page.',
-  },
-
-  {
-    projectName: 'Movie Search',
-    projectImage: moviePhoto,
-    projectRepoLink: 'https://github.com/rekha0suthar/movie-app',
-    projectDemoLink: 'https://movie-creation.netlify.app/',
-    projectSummary:
-      'We can search movie, and movies will be fetched from api, showed as cards, clicking on movie open its detailed page.',
-  },
-
-  {
-    projectName: 'Image Gallery',
-    projectImage: imageGallery,
-    projectRepoLink: 'https://github.com/rekha0suthar/lumina-creative',
-    projectDemoLink: 'https://lumina-creative-image-gallery.netlify.app/',
-    projectSummary:
-      'Application containing lots of images organised properly. Different creative pages. Responsive pages can fit on any screen size.',
+      'Social feed with auth: posts (CRUD), likes and comments, follow/unfollow, and profile-oriented navigation.',
+    techStack: ['React', 'Node.js', 'MongoDB'],
   },
 ];
 
@@ -140,6 +70,17 @@ const Projects = () => {
     <div className="section-container" id="projects">
       <h1 className="section-title">Projects</h1>
       <div className="title-underline"></div>
+      <p className="projects-intro">
+        Selected full-stack work. More repos and experiments live on{' '}
+        <a
+          href="https://github.com/rekha0suthar"
+          target="_blank"
+          rel="noreferrer"
+        >
+          GitHub
+        </a>
+        .
+      </p>
       <div className="projects-grid">
         {projects.map((project, idx) => (
           <div className="project-card" key={idx}>
@@ -151,6 +92,15 @@ const Projects = () => {
             <div className="project-info">
               <h3>{project.projectName}</h3>
               <p>{project.projectSummary}</p>
+              {project.techStack?.length ? (
+                <div className="project-tech-tags">
+                  {project.techStack.map((t) => (
+                    <span key={t} className="project-tech-tag">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              ) : null}
               <div className="project-links">
                 <a
                   href={project.projectDemoLink}

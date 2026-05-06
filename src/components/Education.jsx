@@ -24,6 +24,10 @@ const Education = () => {
           <div className="timeline-content">
             <h3>{edu.degree}</h3>
             <h4>{edu.institution}</h4>
+            <p className="education-tagline">
+              Coursework breadth across programming, statistics, and data —
+              informs how I design interfaces on top of real-world data flows.
+            </p>
           </div>
           <img src={edu.logo} alt={edu.institution} />
         </div>

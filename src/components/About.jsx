@@ -16,7 +16,12 @@ const About = () => {
           <div className="profile-intro">
             <h2>Hi, I'm Rekha Suthar!</h2>
             <p>
-             Experienced Frontend Developer with a passion for building scalable and user-friendly web interfaces using React, Redux, and modern JavaScript. Proven ability to optimize performance and create reusable, modular components. Eager to contribute to a team building cutting-edge AI applications.
+              Frontend-focused full-stack engineer (React, Redux, MERN). I ship
+              performant interfaces, reusable components, and pragmatic state
+              management. IIT Madras (Data Science & Programming) grounding
+              means I enjoy products where data quality, UX, and engineering meet
+              — including thoughtful use of ML/AI features when they solve real
+              user problems.
             </p>
           </div>
         </div>
@@ -26,9 +31,10 @@ const About = () => {
             <div className="card-content">
               <h3>My Journey</h3>
               <p>
-                I hold a Bachelor's degree in Data Science and Programming, and
-                I specialize in solving complex data challenges while crafting
-                impactful user experiences.
+                B.Sc. Data Science & Programming from{' '}
+                <strong>IIT Madras</strong>: strong fundamentals in data and
+                programming, applied today through robust web interfaces and
+                full-stack delivery.
               </p>
             </div>
           </div>
@@ -37,8 +43,9 @@ const About = () => {
             <div className="card-content">
               <h3>Technical Expertise</h3>
               <p>
-                Proficient in modern web technologies, with a strong focus on
-                building creative and engaging applications using React and CSS.
+                Production experience with React, Redux, REST APIs, and the MERN
+                stack; comfortable owning features end to end—from UI polish to
+                API integration and performance tuning.
               </p>
             </div>
           </div>
