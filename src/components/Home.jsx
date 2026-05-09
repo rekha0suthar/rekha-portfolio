@@ -2,6 +2,7 @@ import React from 'react';
 import { SocialIcon } from 'react-social-icons';
 import { motion } from 'framer-motion';
 import { Typewriter } from 'react-simple-typewriter';
+import { personal } from '../data';
 import '../styles/Home.css';
 
 const Home = () => {
@@ -14,16 +15,12 @@ const Home = () => {
         transition={{ duration: 1 }}
         className="detail-section"
       >
-        <h1 style={{ color: 'white' }}>Code with purpose, build with passion</h1>
+        <h1 style={{ color: 'white' }}>{personal.heroHeading}</h1>
 
         {/* Typewriter Effect for Title */}
         <p className="title">
           <Typewriter
-            words={[
-              'Full Stack Developer',
-              'React & Node.js',
-              'IIT Madras · Data Science',
-            ]}
+            words={personal.typewriterRoles}
             loop={true}
             cursor
             cursorStyle="|"
@@ -39,10 +36,8 @@ const Home = () => {
           transition={{ duration: 1, delay: 0.5 }}
           className="tagline "
         >
-          <strong>Rekha Suthar</strong>
-          <span className="home-credential">
-            B.Sc. Data Science & Programming · IIT Madras
-          </span>
+          <strong>{personal.fullName}</strong>
+          <span className="home-credential">{personal.credentialLine}</span>
         </motion.p>
 
         {/* Social Icons with Hover Effect */}
@@ -52,7 +47,7 @@ const Home = () => {
             transition={{ duration: 0.3 }}
           >
             <SocialIcon
-              url="https://www.linkedin.com/in/rekha0suthar/"
+              url={personal.socials.linkedin}
               target="_blank"
               fgColor="white"
               bgColor="transparent"
@@ -63,7 +58,7 @@ const Home = () => {
             transition={{ duration: 0.3 }}
           >
             <SocialIcon
-              url="https://github.com/rekha0suthar/"
+              url={personal.socials.github}
               target="_blank"
               fgColor="white"
               bgColor="transparent"
@@ -72,7 +67,7 @@ const Home = () => {
 
           {/* Resume Button with Hover Glow */}
           <motion.a
-            href="https://docs.google.com/document/d/19OqmUb553pcvdMQSLro7EVxCk2ysf4dNw4EDGHIWZdw/edit?usp=sharing"
+            href={personal.resumeUrl}
             target="_blank"
             rel="noreferrer"
             whileHover={{

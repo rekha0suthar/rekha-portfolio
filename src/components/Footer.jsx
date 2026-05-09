@@ -1,22 +1,23 @@
 import React from 'react';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { personal } from '../data';
 import '../styles/Footer.css';
 
 const Footer = () => {
   const socialLinks = [
     {
       icon: <FaLinkedin />,
-      url: 'https://www.linkedin.com/in/rekha0suthar/',
+      url: personal.socials.linkedin,
       label: 'LinkedIn',
     },
     {
       icon: <FaGithub />,
-      url: 'https://github.com/rekha0suthar/',
+      url: personal.socials.github,
       label: 'GitHub',
     },
     {
       icon: <FaEnvelope />,
-      url: 'mailto:rekhasuthar0suthar@gmail.com',
+      url: `mailto:${personal.email}`,
       label: 'Email',
     },
   ];
@@ -39,7 +40,7 @@ const Footer = () => {
           ))}
         </div>
         <p className="copyright">
-          © {new Date().getFullYear()} Rekha Suthar. All rights reserved.
+          © {new Date().getFullYear()} {personal.fullName}. All rights reserved.
         </p>
       </div>
     </footer>

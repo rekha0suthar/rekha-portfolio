@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import { navLinks, personal } from '../data';
 import '../styles/Navbar.css';
 
 const Navbar = () => {
@@ -54,21 +55,10 @@ const Navbar = () => {
     closeMenu();
   };
 
-  const navLinks = [
-    { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'education', label: 'Education' },
-    { id: 'experience', label: 'Experience' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'certificates', label: 'Certificates' },
-    { id: 'contact', label: 'Contact' },
-  ];
-
   return (
     <>
       <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-        <div className="nav-brand">RS</div>
+        <div className="nav-brand">{personal.shortName}</div>
         <div className="hamburger" onClick={toggleMenu}>
           {isOpen ? <FaTimes /> : <FaBars />}
         </div>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
+import { personal } from '../data';
 import '../styles/Contact.css';
 
 const SERVICE_ID = process.env.REACT_APP_SERVICE_ID;
@@ -19,49 +20,32 @@ const Contact = () => {
     e.preventDefault();
     setStatus('sending');
 
-    await emailjs
-      .send(
-        SERVICE_ID, // Replace with your EmailJS service ID
-        NOT_TEMPLATE_ID, // Replace with your EmailJS template ID
-        {
-          to_name: 'Rekha', // your name
-          from_name: formData.name,
-          reply_to: formData.email,
-          message: formData.message,
-        },
-        PUBLIC_KEY // Replace with your EmailJS public key
-      )
-      .then(
-        (response) => {
-          setStatus('success');
-          setFormData({ name: '', email: '', message: '' });
-        },
-        (error) => {
-          setStatus('error');
-        }
-      );
+    const payload = {
+      to_name: personal.firstName,
+      from_name: formData.name,
+      reply_to: formData.email,
+      message: formData.message,
+    };
 
-    await emailjs
-      .send(
-        SERVICE_ID, // Replace with your EmailJS service ID
-        CONF_TEMPLATE_ID, // Replace with your EmailJS template ID
-        {
-          to_name: 'Rekha',
-          from_name: formData.name,
-          reply_to: formData.email,
-          message: formData.message,
-        },
-        PUBLIC_KEY // Replace with your EmailJS public key
-      )
-      .then(
-        (response) => {
-          setStatus('success');
-          setFormData({ name: '', email: '', message: '' });
-        },
-        (error) => {
-          setStatus('error');
-        }
-      );
+    await emailjs.send(SERVICE_ID, NOT_TEMPLATE_ID, payload, PUBLIC_KEY).then(
+      (response) => {
+        setStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+      },
+      (error) => {
+        setStatus('error');
+      }
+    );
+
+    await emailjs.send(SERVICE_ID, CONF_TEMPLATE_ID, payload, PUBLIC_KEY).then(
+      (response) => {
+        setStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+      },
+      (error) => {
+        setStatus('error');
+      }
+    );
   };
 
   return (
