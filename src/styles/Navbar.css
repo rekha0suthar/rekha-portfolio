@@ -127,22 +127,16 @@
     position: fixed;
     top: 70px;
     left: -100%;
-    /* Use dvh when supported so mobile address-bar resize doesn't clip content */
     height: calc(100vh - 70px);
-    height: calc(100dvh - 70px);
     width: 100%;
     flex-direction: column;
     justify-content: flex-start;
-    gap: 0.5rem;
-    padding: 1.5rem 1rem 3rem;
+    gap: 1rem;
+    padding-top: 2rem;
     background: rgba(13, 17, 23, 0.98);
     backdrop-filter: blur(10px);
-    transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
-    overflow-y: auto;
-    overflow-x: hidden;
-    overscroll-behavior: contain;
-    -webkit-overflow-scrolling: touch;
   }
 
   .nav-links.active {
@@ -150,11 +144,10 @@
   }
 
   .nav-links a {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     width: 100%;
     text-align: center;
-    padding: 0.65rem 0.7rem;
-    flex-shrink: 0;
+    padding: 0.7rem;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
@@ -167,7 +160,7 @@
   .nav-links a.active {
     background: rgba(74, 158, 255, 0.1);
     transform: translateX(5px);
-    padding: 0.65rem 0.7rem;
+    padding: 0.7rem;
     width: 100%;
     border-radius: 8px;
   }
