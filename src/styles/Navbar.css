@@ -132,7 +132,6 @@
     flex-direction: column;
     justify-content: flex-start;
     gap: 1rem;
-    padding-top: 2rem;
     background: rgba(13, 17, 23, 0.98);
     backdrop-filter: blur(10px);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
