@@ -1,0 +1,154 @@
+.now-intro {
+  color: #b8c5d9;
+  font-size: 1rem;
+  text-align: center;
+  margin: -1rem 0 2rem;
+  max-width: 640px;
+}
+
+.now-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  max-width: 1100px;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.now-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding: 1.75rem;
+  text-align: left;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.now-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(90deg, #00b4db, #0083b0);
+  opacity: 0.85;
+}
+
+.now-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.now-card-header h3 {
+  color: #4a9eff;
+  font-size: 1.3rem;
+  margin: 0;
+  flex: 1;
+  min-width: 0;
+}
+
+.now-status {
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  white-space: nowrap;
+}
+
+.now-status--in-progress {
+  background: rgba(0, 180, 219, 0.18);
+  color: #6ed8f5;
+  border-color: rgba(0, 180, 219, 0.4);
+}
+
+.now-status--shipping-soon {
+  background: rgba(80, 220, 120, 0.16);
+  color: #80e3a3;
+  border-color: rgba(80, 220, 120, 0.4);
+}
+
+.now-status--planned {
+  background: rgba(255, 255, 255, 0.06);
+  color: #c9d4e3;
+}
+
+.now-summary {
+  color: #d3deec;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.now-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.now-tag {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(74, 158, 255, 0.12);
+  border: 1px solid rgba(74, 158, 255, 0.3);
+  color: #c0d8ff;
+}
+
+.now-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.now-target {
+  color: #8ea0bd;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+}
+
+.now-link {
+  color: #4a9eff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.now-link:hover {
+  color: #7ab8ff;
+  transform: translateX(2px);
+}
+
+@media (max-width: 880px) {
+  .now-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+  .now-card {
+    padding: 1.5rem;
+  }
+  .now-card-header h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .now-card {
+    padding: 1.25rem;
+  }
+  .now-summary {
+    font-size: 0.9rem;
+  }
+}

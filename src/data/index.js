@@ -45,18 +45,20 @@ import {
 // ---------------------------------------------------------------------------
 export const personal = {
   fullName: 'Rekha Suthar',
-  shortName: 'RS', // navbar brand
-  firstName: 'Rekha', // recipient name in the contact form
-  email: 'rekhasuthar0suthar@gmail.com',
+  shortName: 'RS',
+  firstName: 'Rekha',
+  email: 'rekha0suthar@gmail.com',
 
-  heroHeading: 'Code with purpose, build with passion',
+  heroHeading: 'Building AI-powered web products end to end',
   typewriterRoles: [
-    'Full Stack Developer',
-    'React & Node.js',
+    'AI Application Engineer',
+    'Full-Stack with React & Node',
+    'Building with Claude & RAG',
     'IIT Madras · Data Science',
   ],
-  credentialLine: 'B.Sc. Data Science & Programming · IIT Madras',
+  credentialLine: 'B.Sc. Data Science & Applications · IIT Madras',
 
+  // TODO: Replace with the new AI-tailored resume URL once uploaded.
   resumeUrl:
     'https://docs.google.com/document/d/19OqmUb553pcvdMQSLro7EVxCk2ysf4dNw4EDGHIWZdw/edit?usp=sharing',
 
@@ -67,41 +69,41 @@ export const personal = {
 };
 
 // ---------------------------------------------------------------------------
-//  Navbar links — order here matches the order shown in the navbar.
-//  `id` must match the section's `id` attribute on the page.
+//  Navbar links
 // ---------------------------------------------------------------------------
 export const navLinks = [
   { id: 'home', label: 'Home' },
   { id: 'about', label: 'About' },
+  { id: 'now', label: 'Now' },
   { id: 'education', label: 'Education' },
   { id: 'experience', label: 'Experience' },
   { id: 'projects', label: 'Projects' },
+  { id: 'writing', label: 'Writing' },
   { id: 'skills', label: 'Skills' },
   { id: 'certificates', label: 'Certificates' },
   { id: 'contact', label: 'Contact' },
 ];
 
 // ---------------------------------------------------------------------------
-//  About — top intro + journey cards
-//  Each journey card's `body` may be a string OR an array of bullets.
+//  About
 // ---------------------------------------------------------------------------
 export const about = {
   greeting: "Hi, I'm Rekha Suthar!",
   intro:
-    'Frontend-focused full-stack engineer (React, Redux, MERN). I ship performant interfaces, reusable components, and pragmatic state management. IIT Madras (Data Science & Programming) grounding means I enjoy products where data quality, UX, and engineering meet — including thoughtful use of ML/AI features when they solve real user problems.',
+    'Full-stack engineer with a Data Science background from IIT Madras, building AI-powered web products end to end — from React UIs and design-system work to integrating LLM APIs and retrieval pipelines. Production experience shipping React apps with Node/Express backends; comfortable owning features from spec to deployment. Currently focused on AI application development: LLM-powered tools, retrieval-augmented chat, and prompt-driven UX.',
 
   journey: [
     {
       title: 'My Journey',
-      body: 'B.Sc. Data Science & Programming from IIT Madras: strong fundamentals in data and programming, applied today through robust web interfaces and full-stack delivery.',
+      body: 'B.Sc. Data Science & Applications from IIT Madras: strong fundamentals in data, statistics, and programming, applied today through full-stack delivery and AI application work.',
     },
     {
       title: 'Technical Expertise',
       body: 'Production experience with React, Redux, REST APIs, and the MERN stack; comfortable owning features end to end—from UI polish to API integration and performance tuning.',
     },
     {
-      title: 'Problem Solving',
-      body: 'Adept at navigating complex data issues and developing innovative solutions under pressure.',
+      title: 'AI Application Development',
+      body: 'Currently shipping LLM-powered features with the Claude API: prompt design for structured output, streaming UI, retrieval-augmented chat with embeddings and vector search.',
     },
     {
       title: 'Passions & Interests',
@@ -113,6 +115,45 @@ export const about = {
     },
   ],
 };
+
+// ---------------------------------------------------------------------------
+//  Currently Building
+// ---------------------------------------------------------------------------
+export const currentlyBuilding = [
+  {
+    title: 'AI Resume Tailor',
+    summary:
+      'Paste a resume and a job description, get tailored bullets, ATS keyword gaps, and likely interview questions back. Streaming UI on top of the Anthropic Claude API.',
+    status: 'In progress',
+    target: 'Q2 2026',
+    tags: ['React', 'Node.js', 'Claude API', 'Streaming UI'],
+    link: null,
+  },
+  {
+    title: 'Chat with Your Docs (RAG)',
+    summary:
+      'Upload a PDF or markdown folder, ask questions, get answers with the source paragraphs cited. Built on embeddings + pgvector + Claude.',
+    status: 'Planned',
+    target: 'Q3 2026',
+    tags: ['React', 'Node.js', 'Claude API', 'pgvector', 'RAG'],
+    link: null,
+  },
+];
+
+// ---------------------------------------------------------------------------
+//  Writing
+// ---------------------------------------------------------------------------
+export const writings = [
+  {
+    title: 'Role-based access in a MERN e-commerce app',
+    summary:
+      'How I structured permissions for customers, admins, and store managers in Grocery Store — JWT, Express middleware, React guards, and the bug that taught me to never trust the client.',
+    date: '2026-05-12',
+    tags: ['MERN', 'JWT', 'Auth', 'Build notes'],
+    status: 'draft',
+    // link: 'https://dev.to/rekha0suthar/...', // fill in once published
+  },
+];
 
 // ---------------------------------------------------------------------------
 //  Education
@@ -128,7 +169,7 @@ export const education = [
 ];
 
 // ---------------------------------------------------------------------------
-//  Work experience timeline
+//  Work experience
 // ---------------------------------------------------------------------------
 export const experiences = [
   {
@@ -143,19 +184,12 @@ export const experiences = [
       'Refactored styling with CSS design tokens (variables), improving consistency and cutting styling iteration time (~10%).',
       'Implemented lazy loading and route-level code splitting, contributing to stronger SEO signals (SEO score ~70% to ~80%).',
     ],
-    technologies: [
-      'React',
-      'Redux',
-      'JavaScript',
-      'HTML',
-      'CSS',
-      'Material-UI',
-    ],
+    technologies: ['React', 'Redux', 'JavaScript', 'HTML', 'CSS', 'Material-UI'],
   },
 ];
 
 // ---------------------------------------------------------------------------
-//  Projects — curated flagship work; deeper demos beat a long list of CRUD apps.
+//  Projects
 // ---------------------------------------------------------------------------
 export const projects = [
   {
@@ -215,8 +249,7 @@ export const projects = [
 ];
 
 // ---------------------------------------------------------------------------
-//  Skills grid — `Icon` is a *component reference* (not JSX) so this file
-//  stays plain JS. The component renders it with `<skill.Icon />`.
+//  Skills
 // ---------------------------------------------------------------------------
 export const skills = [
   { name: 'JavaScript', Icon: SiJavascript, color: '#F7DF1E' },
@@ -244,7 +277,7 @@ export const skills = [
 //  Certificates
 // ---------------------------------------------------------------------------
 export const certificates = [
-  { image: sql, title: 'hackerrank - SQL (Adanced) Certificate' },
+  { image: sql, title: 'HackerRank - SQL (Advanced) Certificate' },
   { image: genai, title: 'outskill - Generative AI Mindset' },
   { image: upgrad, title: 'upGrad - FSD Bootcamp Completion Certificate' },
   {

@@ -1,8 +1,10 @@
 import './App.css';
 import Home from './components/Home';
 import About from './components/About';
+import Now from './components/Now';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
+import Writing from './components/Writing';
 import Skills from './components/Skills';
 import Education from './components/Education';
 import Navbar from './components/Navbar';
@@ -24,9 +26,11 @@ const App = () => {
       <main>
         <Home />
         <About />
+        <Now />
         <Education />
         <Experience />
         <Projects />
+        <Writing />
         <Skills />
         <Certificates />
         <Contact />
