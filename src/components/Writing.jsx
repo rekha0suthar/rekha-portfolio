@@ -29,9 +29,7 @@ const PostCard = ({ post, index }) => {
   return (
     <Tag
       {...linkProps}
-      className={`writing-card glass-card glass-card-hover fade-in-up ${
-        isDraft ? 'is-draft' : ''
-      }`}
+      className={`writing-card fade-in-up ${isDraft ? 'is-draft' : ''}`}
       style={{ animationDelay: `${index * 0.08}s` }}
     >
       <div className="writing-meta">
@@ -86,7 +84,7 @@ const Writing = () => {
           ))}
         </div>
       ) : (
-        <div className="writing-empty glass-card fade-in-up">
+        <div className="writing-empty fade-in-up">
           <span className="writing-empty-eyebrow">Coming soon</span>
           <h3>First posts dropping with the AI Resume Tailor launch</h3>
           <p>

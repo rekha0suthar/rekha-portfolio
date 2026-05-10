@@ -2,6 +2,10 @@ import React from 'react';
 import { currentlyBuilding } from '../data';
 import '../styles/Now.css';
 
+function slugify(str = '') {
+  return str.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+
 const Now = () => {
   if (!currentlyBuilding || currentlyBuilding.length === 0) return null;
 
@@ -16,7 +20,7 @@ const Now = () => {
       <div className="now-grid">
         {currentlyBuilding.map((item, idx) => (
           <article
-            className="now-card glass-card glass-card-hover fade-in-up"
+            className="now-card fade-in-up"
             style={{ animationDelay: `${idx * 0.1}s` }}
             key={idx}
           >
@@ -60,9 +64,5 @@ const Now = () => {
     </div>
   );
 };
-
-function slugify(str = '') {
-  return str.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-}
 
 export default Now;
