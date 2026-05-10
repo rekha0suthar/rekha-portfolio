@@ -122,11 +122,11 @@ export const currentlyBuilding = [
   {
     title: 'AI Resume Tailor',
     summary:
-      'Paste a resume and a job description, get tailored bullets, ATS keyword gaps, and likely interview questions back. Streaming UI on top of the Anthropic Claude API.',
+      'Paste a resume and a job description, get tailored bullet rewrites, ATS keyword gaps, and likely interview questions back. Vite + React on the front, Vercel Function calling Groq Llama 3.3 70B in JSON mode on the back.',
     status: 'In progress',
     target: 'Q2 2026',
-    tags: ['React', 'Node.js', 'Claude API', 'Streaming UI'],
-    link: null,
+    tags: ['React', 'Vite', 'Vercel Functions', 'Groq', 'Llama 3.3'],
+    link: 'https://github.com/rekha0suthar/ai-resume-tailor',
   },
   {
     title: 'Chat with Your Docs (RAG)',
@@ -143,6 +143,15 @@ export const currentlyBuilding = [
 //  Writing
 // ---------------------------------------------------------------------------
 export const writings = [
+  {
+    title: 'Building AI Resume Tailor — v0 build notes',
+    summary:
+      'Shipping the first AI feature on my portfolio: paste resume + JD, get tailored bullets, keyword gaps, and likely interview questions. Why I picked Groq over Claude, the prompt that does the work, and the JSON-shape bug I almost shipped.',
+    date: '2026-05-15',
+    tags: ['AI', 'Groq', 'Llama 3.3', 'React', 'Vercel'],
+    status: 'draft',
+    // link: 'https://dev.to/rekha0suthar/...', // fill in once published
+  },
   {
     title: 'Role-based access in a MERN e-commerce app',
     summary:
@@ -267,19 +276,4 @@ export const skills = [
   { name: 'Bootstrap', Icon: SiBootstrap, color: '#7952B3' },
   { name: 'Tailwind CSS', Icon: SiTailwindcss, color: '#06B6D4' },
   { name: 'Python', Icon: FaPython, color: '#FFD43B' },
-  { name: 'AWS', Icon: FaAws, color: '#FF9900' },
-  { name: 'GitHub', Icon: FaGithub, color: '#ffffff' },
-];
-
-// ---------------------------------------------------------------------------
-//  Certificates
-// ---------------------------------------------------------------------------
-export const certificates = [
-  { image: sql, title: 'HackerRank - SQL (Advanced) Certificate' },
-  { image: genai, title: 'outskill - Generative AI Mindset' },
-  { image: upgrad, title: 'upGrad - FSD Bootcamp Completion Certificate' },
-  {
-    image: hackethon,
-    title: 'Hackathon - Web Development Winning Certificate',
-  },
-];
+  { n
