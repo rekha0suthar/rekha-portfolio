@@ -29,42 +29,40 @@ const PostCard = ({ post, index }) => {
   return (
     <Tag
       {...linkProps}
-      className={`writing-card fade-in-up ${isDraft ? 'is-draft' : ''}`}
+      className={`writing-card glass-card glass-card-hover fade-in-up ${
+        isDraft ? 'is-draft' : ''
+      }`}
       style={{ animationDelay: `${index * 0.08}s` }}
     >
-      <div className="writing-card-stripe" aria-hidden="true" />
-
-      <div className="writing-card-body">
-        <div className="writing-meta">
-          {post.date && (
-            <span className="writing-date">{formatDate(post.date)}</span>
-          )}
-          {post.summary && (
-            <span className="writing-readtime">
-              {wordsToReadTime(post.summary + ' ' + (post.title || ''))}
-            </span>
-          )}
-          {isDraft && <span className="writing-badge">Draft</span>}
-        </div>
-
-        <h3 className="writing-title">{post.title}</h3>
-
-        {post.summary && <p className="writing-summary">{post.summary}</p>}
-
-        {post.tags?.length ? (
-          <div className="writing-tags">
-            {post.tags.map((t) => (
-              <span key={t} className="writing-tag">
-                {t}
-              </span>
-            ))}
-          </div>
-        ) : null}
-
-        <span className="writing-read-more">
-          {isDraft ? 'Publishing soon' : 'Read post →'}
-        </span>
+      <div className="writing-meta">
+        {post.date && (
+          <span className="writing-date">{formatDate(post.date)}</span>
+        )}
+        {post.summary && (
+          <span className="writing-readtime">
+            {wordsToReadTime(post.summary + ' ' + (post.title || ''))}
+          </span>
+        )}
+        {isDraft && <span className="writing-badge">Draft</span>}
       </div>
+
+      <h3 className="writing-title">{post.title}</h3>
+
+      {post.summary && <p className="writing-summary">{post.summary}</p>}
+
+      {post.tags?.length ? (
+        <div className="writing-tags">
+          {post.tags.map((t) => (
+            <span key={t} className="writing-tag">
+              {t}
+            </span>
+          ))}
+        </div>
+      ) : null}
+
+      <span className="writing-read-more">
+        {isDraft ? 'Publishing soon' : 'Read post →'}
+      </span>
     </Tag>
   );
 };
@@ -88,20 +86,17 @@ const Writing = () => {
           ))}
         </div>
       ) : (
-        <div className="writing-empty fade-in-up">
-          <div className="writing-empty-stripe" aria-hidden="true" />
-          <div className="writing-empty-body">
-            <span className="writing-empty-eyebrow">Coming soon</span>
-            <h3>First posts dropping with the AI Resume Tailor launch</h3>
-            <p>
-              Each project I ship will come with a short write-up. On the way:
-            </p>
-            <ul className="writing-empty-topics">
-              <li>Prompting Claude for structured, validated output</li>
-              <li>RAG with pgvector — what tripped me up the first time</li>
-              <li>Designing streaming UX in React (and when not to stream)</li>
-            </ul>
-          </div>
+        <div className="writing-empty glass-card fade-in-up">
+          <span className="writing-empty-eyebrow">Coming soon</span>
+          <h3>First posts dropping with the AI Resume Tailor launch</h3>
+          <p>
+            Each project I ship will come with a short write-up. On the way:
+          </p>
+          <ul className="writing-empty-topics">
+            <li>Prompting Claude for structured, validated output</li>
+            <li>RAG with pgvector — what tripped me up the first time</li>
+            <li>Designing streaming UX in React (and when not to stream)</li>
+          </ul>
         </div>
       )}
     </div>
