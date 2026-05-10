@@ -58,9 +58,8 @@ export const personal = {
   ],
   credentialLine: 'B.Sc. Data Science & Applications · IIT Madras',
 
-  // TODO: Replace with the new AI-tailored resume URL once uploaded.
   resumeUrl:
-    'https://docs.google.com/document/d/19OqmUb553pcvdMQSLro7EVxCk2ysf4dNw4EDGHIWZdw/edit?usp=sharing',
+    'https://docs.google.com/document/d/1UbyN_fI3ZgWA5EGiq7a6SxUlJGoUcrRy',
 
   socials: {
     linkedin: 'https://www.linkedin.com/in/rekha0suthar/',
