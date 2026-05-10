@@ -150,8 +150,7 @@ export const writings = [
       'How I structured permissions for customers, admins, and store managers in Grocery Store — JWT, Express middleware, React guards, and the bug that taught me to never trust the client.',
     date: '2026-05-12',
     tags: ['MERN', 'JWT', 'Auth', 'Build notes'],
-    status: 'draft',
-    // link: 'https://dev.to/rekha0suthar/...', // fill in once published
+    link: 'https://dev.to/rekha_suthar_770cefe8b657/role-based-access-in-a-mern-e-commerce-app-p0e',
   },
 ];
 
@@ -283,5 +282,4 @@ export const certificates = [
   {
     image: hackethon,
     title: 'Hackathon - Web Development Winning Certificate',
-  },
-];
+  
