@@ -122,9 +122,9 @@ export const currentlyBuilding = [
   {
     title: 'AI Resume Tailor',
     summary:
-      'Paste a resume and a job description, get tailored bullet rewrites, ATS keyword gaps, and likely interview questions back. Vite + React on the front, Vercel Function calling Groq Llama 3.3 70B in JSON mode on the back.',
+      'Paste a resume and a job description, get tailored bullet rewrites, ATS keyword gaps, and likely interview questions back. v0 ships on Vite + React + Vercel Functions + Groq Llama 3.3 70B. Coming next: v1 streaming UI, v2 PDF upload, v3 template-based resume generation with one-click PDF download — evolving from a dev tool into a real-world product.',
     status: 'Live (v0)',
-    target: 'v1 — streaming UI · Q2 2026',
+    target: 'v1 streaming → v2 PDF upload → v3 template + download',
     tags: ['React', 'Vite', 'Vercel Functions', 'Groq', 'Llama 3.3'],
     demoLink: 'https://ai-resume-tailor-ruby.vercel.app/',
     repoLink: 'https://github.com/rekha0suthar/ai-resume-tailor',
