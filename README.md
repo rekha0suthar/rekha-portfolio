@@ -1,3 +1,3 @@
-# rekha's-portfolio
+# Rekha Suthar — Portfolio
 
-![Screenshot from 2024-08-25 20-43-50](https://github.com/user-attachments/assets/280fb00c-94ef-42a9-baee-1a7f9aac518d)
+![Rekha Suthar — Full-Stack Engineer · AI Application Developer · IIT Madras (Data Science)](public/og-image.p
