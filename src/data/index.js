@@ -41,7 +41,7 @@ import {
 } from 'react-icons/si';
 
 // ---------------------------------------------------------------------------
-//  Personal info — Home / Navbar / Footer / Contact
+//  Personal info
 // ---------------------------------------------------------------------------
 export const personal = {
   fullName: 'Rekha Suthar',
@@ -117,7 +117,6 @@ export const about = {
 
 // ---------------------------------------------------------------------------
 //  Currently Building
-//  Each item: { title, summary, status, target, tags, demoLink?, repoLink? }
 // ---------------------------------------------------------------------------
 export const currentlyBuilding = [
   {
@@ -169,8 +168,9 @@ export const writings = [
 // ---------------------------------------------------------------------------
 export const education = [
   {
-    degree: 'Bachelor of Science in Data Science and Programming',
+    degree: 'Bachelor of Science in Data Science & Applications',
     institution: 'Indian Institute of Technology, Madras',
+    period: 'Jan 2021 – Apr 2025',
     logo: 'https://engageindia.ca/wp-content/uploads/2017/01/IITM-500x500.png',
     tagline:
       'Coursework breadth across programming, statistics, and data — informs how I design interfaces on top of real-world data flows.',

@@ -17,6 +17,9 @@ const Education = () => {
           <div className="timeline-content">
             <h3>{edu.degree}</h3>
             <h4>{edu.institution}</h4>
+            {edu.period && (
+              <p className="education-period">{edu.period}</p>
+            )}
             {edu.tagline && (
               <p className="education-tagline">{edu.tagline}</p>
             )}
