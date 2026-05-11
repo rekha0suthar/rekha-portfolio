@@ -152,8 +152,7 @@ export const writings = [
       'Shipping the first AI feature on my portfolio: paste resume + JD, get tailored bullets, keyword gaps, and likely interview questions. Why I picked Groq over Claude, the prompt that does the work, and the JSON-shape bug I almost shipped.',
     date: '2026-05-15',
     tags: ['AI', 'Groq', 'Llama 3.3', 'React', 'Vercel'],
-    status: 'draft',
-    // link: 'https://dev.to/rekha0suthar/...', // fill in once published
+    link: 'https://dev.to/rekha0suthar/building-ai-resume-tailor-v0-build-notes-58f9', // fill in once published
   },
   {
     title: 'Role-based access in a MERN e-commerce app',
