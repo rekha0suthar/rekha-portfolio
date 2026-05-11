@@ -117,16 +117,18 @@ export const about = {
 
 // ---------------------------------------------------------------------------
 //  Currently Building
+//  Each item: { title, summary, status, target, tags, demoLink?, repoLink? }
 // ---------------------------------------------------------------------------
 export const currentlyBuilding = [
   {
     title: 'AI Resume Tailor',
     summary:
       'Paste a resume and a job description, get tailored bullet rewrites, ATS keyword gaps, and likely interview questions back. Vite + React on the front, Vercel Function calling Groq Llama 3.3 70B in JSON mode on the back.',
-    status: 'In progress',
-    target: 'Q2 2026',
+    status: 'Live (v0)',
+    target: 'v1 — streaming UI · Q2 2026',
     tags: ['React', 'Vite', 'Vercel Functions', 'Groq', 'Llama 3.3'],
-    link: 'https://github.com/rekha0suthar/ai-resume-tailor',
+    demoLink: 'https://ai-resume-tailor-ruby.vercel.app/',
+    repoLink: 'https://github.com/rekha0suthar/ai-resume-tailor',
   },
   {
     title: 'Chat with Your Docs (RAG)',
@@ -135,7 +137,8 @@ export const currentlyBuilding = [
     status: 'Planned',
     target: 'Q3 2026',
     tags: ['React', 'Node.js', 'Claude API', 'pgvector', 'RAG'],
-    link: null,
+    demoLink: null,
+    repoLink: null,
   },
 ];
 
@@ -276,4 +279,19 @@ export const skills = [
   { name: 'Bootstrap', Icon: SiBootstrap, color: '#7952B3' },
   { name: 'Tailwind CSS', Icon: SiTailwindcss, color: '#06B6D4' },
   { name: 'Python', Icon: FaPython, color: '#FFD43B' },
-  { n
+  { name: 'AWS', Icon: FaAws, color: '#FF9900' },
+  { name: 'GitHub', Icon: FaGithub, color: '#ffffff' },
+];
+
+// ---------------------------------------------------------------------------
+//  Certificates
+// ---------------------------------------------------------------------------
+export const certificates = [
+  { image: sql, title: 'HackerRank - SQL (Advanced) Certificate' },
+  { image: genai, title: 'outskill - Generative AI Mindset' },
+  { image: upgrad, title: 'upGrad - FSD Bootcamp Completion Certificate' },
+  {
+    image: hackethon,
+    title: 'Hackathon - Web Development Winning Certificate',
+  },
+];

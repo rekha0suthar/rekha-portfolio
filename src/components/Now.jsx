@@ -14,7 +14,7 @@ const Now = () => {
       <h1 className="section-title">Currently Building</h1>
       <div className="title-underline"></div>
       <p className="now-intro">
-        Live momentum — what's actively in progress right now.
+        Live momentum — what&rsquo;s actively in progress right now.
       </p>
 
       <div className="now-grid">
@@ -47,16 +47,28 @@ const Now = () => {
               {item.target && (
                 <span className="now-target">Targeting · {item.target}</span>
               )}
-              {item.link && (
-                <a
-                  href={item.link}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="now-link"
-                >
-                  Live Preview →
-                </a>
-              )}
+              <div className="now-card-links">
+                {item.demoLink && (
+                  <a
+                    href={item.demoLink}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="now-link now-link--primary"
+                  >
+                    Live Demo →
+                  </a>
+                )}
+                {item.repoLink && (
+                  <a
+                    href={item.repoLink}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="now-link"
+                  >
+                    GitHub →
+                  </a>
+                )}
+              </div>
             </footer>
           </article>
         ))}
