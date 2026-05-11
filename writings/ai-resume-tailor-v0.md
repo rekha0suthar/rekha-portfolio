@@ -1,51 +1,52 @@
 # Building AI Resume Tailor — v0 build notes
 
-*A short build log on shipping the first AI feature for my portfolio. End-to-end on free tools. Why this stack, what I'd discuss in an interview, and what's coming next.*
+Two textareas. One button. That's the whole product surface.
 
-🔗 **Live**: [ai-resume-tailor-ruby.vercel.app](https://ai-resume-tailor-ruby.vercel.app/) · **Repo**: [github.com/rekha0suthar/ai-resume-tailor](https://github.com/rekha0suthar/ai-resume-tailor)
+Behind the button is a Vercel serverless function that calls Groq's Llama 3.3 70B. The model sends back four things: tailored rewrites of bullets from the resume, ATS keyword gaps from the job description, five interview questions a hiring manager might actually ask, and an honest 0–100 match score.
 
----
+It's the same pattern most AI app companies hire for these days. Prompt design, structured output, render the response cleanly. So I built one.
 
-## What it is
-
-Two textareas. One button. Behind the button: a Vercel serverless function that calls Groq's Llama 3.3 70B in JSON mode and returns four things — tailored bullet rewrites, ATS keyword-gap analysis, 5 predicted interview questions with prep tips, and an honest 0–100 match score.
-
-It's the same prompt-engineering, structured-output, *talk-to-an-LLM-and-render-the-response-cleanly* pattern that AI app companies hire for every day. So I built one.
+Live: [ai-resume-tailor-ruby.vercel.app](https://ai-resume-tailor-ruby.vercel.app/). Repo: [github.com/rekha0suthar/ai-resume-tailor](https://github.com/rekha0suthar/ai-resume-tailor).
 
 ## Before I wrote a line of code
 
-Almost every junior project failure I've seen starts the same way: someone sees a cool API, opens an editor, and starts typing. Three days later they have a half-built thing they can't ship. I tried to do the opposite.
+I keep seeing a failure pattern in junior projects. Someone sees a cool API, opens an editor, starts typing, and three days later they have a half-built thing they can't ship. I tried to avoid that this time.
 
-**The 30-minute scoping pass:**
+So I spent the first thirty minutes scoping, not coding.
 
-- **What's the smallest version that's actually useful?** Two inputs, one output. Match score, tailored bullets, keyword gaps, interview questions — that's it. No PDF upload, no streaming, no auth, no DB. Anything else is v1+.
-- **Who's it for?** Recruiters who land on my portfolio in 30 seconds. They need to play with a working AI demo, not configure an account.
-- **Where can it fail?** API key leaks, model returning garbage, free-tier rate limits, the user pasting nothing. Each one needed an answer before code.
-- **What's the smallest deployment surface?** One repo, one host, one env var. Vercel covered all three.
+What's the smallest version that's actually useful? Two inputs, four outputs. No PDF upload, no streaming, no auth, no database. Anything more is v1+.
 
-The biggest decision: **start with "paste plain text" not "upload PDF"**. PDF extraction is a 2-hour rabbit hole of its own (text positioning, multi-column, scanned vs digital). Skipping it meant I shipped v0 in an afternoon. PDF support comes in v2 with a clean dedicated codepath.
+Who is it for? Recruiters who land on my portfolio for thirty seconds. They need a working AI demo to play with, not an account to create.
 
-## Why this stack — explicit rationale
+Where can it fail? API key leaks. Model returns garbage. Free tier rate-limits me. User pastes nothing. Each one needed an answer before I touched code.
 
-I picked everything by one rule: **must be free, no credit card, with enough quota to actually use the app.**
+What's the smallest deployment surface? One repo, one host, one environment variable. Vercel covered all three.
 
-**Vite + React 18** instead of Create React App. CRA is unmaintained; Vite's HMR is instant; bundle ships ~30% smaller. For a new app in 2026 there's no defensible reason to choose CRA.
+The biggest call was starting with "paste plain text" and not "upload PDF." PDF extraction is its own two-hour rabbit hole (text positioning, multi-column, scanned vs digital). Skipping it meant I shipped v0 in an afternoon. PDF support comes back in v2 with a clean dedicated codepath.
 
-**Tailwind CSS** for styling. Zero-runtime — Tailwind only ships the utilities I actually used. A single-page app shouldn't carry 600 lines of hand-written CSS or a UI library I'll fight when the design changes.
+## Why this stack
 
-**Vercel** for hosting + serverless. The killer feature: drop a file in `/api/tailor.js` and it becomes a routable serverless endpoint *in the same repo* as the frontend. No second hosting account. No CORS dance.
+I picked everything by one rule: free, no credit card, with real quota.
 
-**Groq over Anthropic or OpenAI** for inference. Three reasons:
+For the frontend I went with Vite plus React 18 instead of Create React App. CRA is unmaintained. Vite's HMR is instant and the bundle ships smaller. There's no defensible reason to pick CRA for a new project in 2026.
 
-1. **Free API key, no credit card.** Both Anthropic and OpenAI require a paid account before letting you call the API with anything but tiny trial credits. That's a hard blocker for a recruiter-facing demo I want to keep alive long-term.
-2. **Speed.** Groq's LPU hardware runs Llama 3 at ~300 tokens/sec. Even without explicit streaming in v0, responses land in ~1.5 seconds.
-3. **JSON mode.** Groq supports OpenAI's `response_format: { type: 'json_object' }` — it forces the model to return parseable JSON, killing a whole category of "model added markdown around its answer" bugs.
+Tailwind for styling. It only ships the utilities I actually used. A single-page app shouldn't carry six hundred lines of hand-written CSS or a UI library I'll end up fighting when the design shifts.
 
-**Llama 3.3 70B specifically.** The smaller 8B models cost less but drift more on JSON structure; the 70B nails the schema almost every time. Quality > a few extra ms.
+Vercel for hosting. The killer feature for this project: drop a file in `/api/tailor.js` and it becomes a routable serverless endpoint in the same repo as the frontend. No second hosting account, no CORS dance, one deploy pipeline.
 
-The single most important architecture decision: **the API key never leaves the server.** Browsers can read every script you ship, so an API call that includes the Groq key client-side is a key any visitor can extract and run up your free quota with. The serverless function is the firewall.
+For the LLM I picked Groq over Anthropic and OpenAI. Three reasons.
 
-## System design at a glance
+The first is the free API key. No credit card needed. Both Anthropic and OpenAI require a paid account before they'll let you call the API for anything past trial credits. That's a hard blocker for a recruiter-facing demo I want to keep alive long-term without paying out of pocket.
+
+The second is speed. Groq's hardware runs Llama 3 at around 300 tokens per second. Even without explicit streaming in v0, responses come back in roughly 1.5 seconds.
+
+The third is JSON mode. Groq supports OpenAI's `response_format: { type: 'json_object' }` parameter, which forces the model to return parseable JSON. That alone removes a whole category of "model added markdown around its answer" bugs.
+
+Llama 3.3 70B specifically, not the smaller 8B. The 8B costs less but drifts more on JSON structure. The 70B nails the schema almost every time. Quality wins.
+
+The single most important architecture decision was making sure the API key never leaves the server. Browsers can read every script you ship, so an API call that includes the Groq key client-side is a key any visitor can extract and run up your free quota with. The serverless function is the firewall.
+
+## What the architecture looks like
 
 ```
 Browser              Vercel Edge                 Groq Cloud
@@ -55,67 +56,74 @@ React UI ─ POST /api/tailor ─▶  api/tailor.js  ──▶  Llama 3.3 70B
       ◀──────── tailored JSON ────────────────────────┘
 ```
 
-Design properties worth calling out:
+A few properties worth pointing out.
 
-- **Stateless.** No database, no session, no PII storage. Resume and JD never leave the request lifecycle. Privacy + scalability for free.
-- **Bounded input.** Resume capped at 8,000 chars, JD at 6,000 — protects model context, keeps cost predictable. Beyond the cap, input is truncated with a `[truncated]` marker.
-- **Single trust boundary.** One place handles the API key (the serverless function). The browser is treated as fully untrusted.
-- **Graceful failure.** Empty body, HTML response, non-JSON, network error — each surfaces a distinct, actionable error message. The first version threw the famous `Unexpected end of JSON input` and I spent an hour debugging it before realising the dev server was the problem.
+It's stateless. No database, no session, no PII. The resume and JD never leave the request lifecycle. Privacy and scalability for free.
+
+Input is bounded. Resume capped at 8,000 characters, JD at 6,000. Protects the model context and keeps cost predictable. Beyond the cap, input gets truncated with a `[truncated]` marker.
+
+There's a single trust boundary. One place handles the API key. The browser is treated as fully untrusted.
+
+Failure is loud. Empty body, HTML response, non-JSON content, network error — each one surfaces its own actionable error message. The very first version of the app threw "Unexpected end of JSON input" and I spent an hour debugging before I realized the dev server wasn't even routing `/api/*`. Lesson there: error messages worth writing usually save more time than they cost to write.
 
 ## The prompt that does the work
 
-Most of the value lives in the system prompt. Three rules I leaned on:
+Most of the value lives in the system prompt. Three rules I leaned on.
 
-**1. Force structured output.** The system prompt declares the exact JSON shape (with empty-string placeholders for clarity) and Groq's `response_format` enforces it.
+Force structured output. The system prompt declares the exact JSON shape with empty-string placeholders for clarity, and Groq's `response_format` enforces it.
 
-**2. Be honest, don't invent.** A career coach who fabricates skills is worse than no coach. The system prompt explicitly says: *"Be honest. Do NOT invent skills the candidate doesn't have."* Without that line, the model is too eager to please and quietly upgrades "I built a CRUD app" to "Led architecture for distributed systems."
+Don't let the model invent. A career coach who fabricates skills is worse than no coach. So the prompt explicitly says: "Be honest. Do NOT invent skills the candidate doesn't have." Without that line, the model is too eager to please and quietly upgrades "I built a CRUD app" to "Led architecture for distributed systems."
 
-**3. Ground every output in something concrete.** Each tailored bullet ships with the original line + rewrite + why. Each missing keyword ships with an actionable suggestion. Each interview question ships with what-they-want and a prep-tip. Specificity beats vagueness, every time.
+Ground every output. Each tailored bullet ships with the original line and a short reason. Each missing keyword comes with an actionable suggestion (like "Add a 1-line bullet about your school project on X") instead of a vague one ("Learn TypeScript"). Each interview question comes with what the interviewer is probing for, plus a prep tip. Specificity beats vagueness, every time.
 
-## The trickiest bug — JSON-shape drift
+## The bug that surprised me
 
-Llama 3.3, even in JSON mode, occasionally returns valid JSON with the *wrong shape* — say, `tailored_bullets` as a string of bullets joined with newlines instead of an array of objects. JSON mode protects against "is this parseable" but not "is this the shape I asked for."
+Llama 3.3, even in JSON mode, occasionally returns valid JSON with the wrong shape. Once I saw `tailored_bullets` come back as a single string of newline-joined bullets instead of an array of objects. JSON mode protects against "is this parseable" but not "is this the shape I asked for."
 
-Two defenses, in order of cost:
+The fix turned out to be layered.
 
-1. **Explicit JSON skeleton in the prompt.** I pasted the empty shape and told the model "return ONLY valid JSON matching this exact shape." Fixed ~95% of drift on its own.
-2. **Optional chaining on the client.** The React app accesses `result?.tailored_bullets` with `[]` fallback for every list. If the model returns junk, the UI shows fewer panels — no white-screen crash.
+The big one was pasting the JSON skeleton into the prompt. I literally wrote out the empty shape inside the system prompt and said "return ONLY valid JSON matching this exact shape." That handled roughly 95% of the drift on its own.
 
-A future v2 will replace prompt-engineering defence with a Zod schema. For v0, prompt + optional chaining is enough.
+The safety net is optional chaining on the client. The React side accesses `result?.tailored_bullets` with a `[]` fallback for every list. If the model returns junk, the UI shows fewer panels instead of crashing.
 
-## Roadmap — from dev tool to real-world product
+A future v2 will replace the prompt-side defence with a Zod schema and proper validation. For v0, this is enough.
 
-v0 works but it's a developer's tool: paste text, get text. The plan:
+## What's coming next
 
-| Version | What ships | Why it matters |
-|---|---|---|
-| **v1** | **Streaming UI (SSE)** — output appears live as Llama generates | Perceived 10× speed bump; teaches streaming UX, the hardest part of AI app frontend |
-| **v2** | **PDF upload + extraction** (`pdfjs-dist`, client-side) | Removes copy-paste friction. Most users have a PDF, not plain text. |
-| **v3** | **Template-based resume generation + one-click PDF download** | The big one. Pick a template, the app builds a fully-formatted resume from your content + the AI suggestions, you download as PDF. v3 is where this stops being a dev tool and becomes a real product. |
+v0 works but it's a developer's tool. Paste text, get text. The plan is to evolve it into something an actual job seeker would use end to end.
 
-Each ship comes with its own build note here. The point isn't shipping v3 fast — it's shipping each version visibly, with a write-up that shows the thinking.
+v1 adds streaming. Output appears live as Llama generates it. That gives a perceived speed bump and teaches streaming UX, which is honestly the hardest part of AI app frontend.
 
-## What I'd discuss in an interview
+v2 brings PDF upload with client-side extraction via pdfjs-dist. Most people have a PDF resume, not plain text. Removing the copy-paste step is a huge friction drop.
 
-Talking points this project unlocks, mapped to questions LLM-app interviewers actually ask:
+v3 is the big one. Template-based resume generation with one-click PDF download. You pick a template, the app builds a fully formatted resume from your content plus the AI's suggestions, you download it. v3 is where this stops being a dev tool and becomes a real product.
 
-- *"How do you keep an API key safe in a web app?"* → server-side env var, no key in client bundle, serverless function as the trust boundary.
-- *"How do you get reliable JSON out of an LLM?"* → JSON mode + explicit schema in the prompt + optional chaining on the client. Defence in depth.
-- *"How do you handle a hostile or malformed model response?"* → response read as text first, three branches (empty, HTML, non-JSON) surface distinct errors. No silent failures.
-- *"How do you scope an AI feature?"* → start with the smallest version that's actually useful. Resist scope creep. Roadmap the rest.
-- *"What's your stance on hallucination in production?"* → bound the model with honesty constraints in the system prompt + structured output + ground every claim in input. If you give the model room to invent, it will.
-- *"Why Groq over Claude or GPT?"* → free tier with real quota, fast inference (LPU vs GPU), JSON mode, no card required. Decisions like this one matter when shipping a side project that needs to stay live.
+Each ship gets its own write-up. The point isn't shipping v3 fast. It's shipping each version visibly, with the thinking behind it on record.
 
-The point of building this isn't just shipping the app — it's living through every one of these decisions, so the answers in an interview are first-hand, not from a blog post.
+## What I'd talk about in an interview
 
-## Cost at this scale
+Some questions LLM-app interviewers actually ask, mapped to what this project let me live through.
 
-$0/month, currently. Groq's free tier gives ~14,400 requests/day. Each tailor request uses ~5,000 tokens in + ~1,500 out — well under any limit. Vercel Hobby's 100k function invocations and 100 GB-hours/month is more than enough.
+"How do you keep an API key safe in a web app?" Server-side env var, no key in the client bundle, serverless function as the trust boundary.
+
+"How do you get reliable JSON out of an LLM?" JSON mode, plus an explicit schema in the prompt, plus optional chaining on the client. Defence in depth.
+
+"How do you handle a malformed model response?" Read the response as text first. Branch on shape: empty body, HTML body, parseable JSON. Each branch surfaces a different, actionable error. No silent failures.
+
+"How do you scope an AI feature?" Start with the smallest version that's actually useful, ship that, then roadmap the rest. Resist scope creep.
+
+"What's your stance on hallucination in production?" Bound the model with honesty constraints in the system prompt, force structured output, ground every claim in the input. If you give the model room to invent, it will.
+
+"Why Groq?" Free tier with real quota, fast inference (LPU instead of GPU), JSON mode, no card required. The decision matters more than it sounds when you're shipping a side project that needs to stay live.
+
+The point of building this isn't just shipping the app. It's that I've now lived through every one of these decisions, so the answers in an interview come from actual experience and not from a blog post I read.
+
+## Cost
+
+Zero per month, right now. Groq's free tier gives around 14,400 requests per day. Each tailor request uses roughly 5,000 input tokens plus 1,500 output, well under any single limit. Vercel Hobby's 100k function invocations and 100 GB-hours per month is more than enough.
 
 ## Repo
 
-[github.com/rekha0suthar/ai-resume-tailor](https://github.com/rekha0suthar/ai-resume-tailor) · MIT licensed. Fork it, deploy your own.
+[github.com/rekha0suthar/ai-resume-tailor](https://github.com/rekha0suthar/ai-resume-tailor). MIT licensed. Fork it, deploy your own.
 
----
-
-*Next up: the v1 streaming build note ("Designing streaming UX in React (and when not to stream)"). After that, v2's PDF extraction lessons.*
+Next up: the v1 streaming build note. After that, v2's PDF extraction lessons.
