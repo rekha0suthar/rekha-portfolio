@@ -25,6 +25,7 @@ import {
   FaHtml5,
   FaCss3Alt,
   FaSass,
+  FaDatabase,
 } from 'react-icons/fa';
 import {
   SiMongodb,
@@ -37,6 +38,11 @@ import {
   SiVuedotjs,
   SiBootstrap,
   SiTailwindcss,
+  SiLangchain,
+  SiOpenai,
+  SiHuggingface,
+  SiStreamlit,
+  SiFastapi,
 } from 'react-icons/si';
 
 // ---------------------------------------------------------------------------
@@ -226,6 +232,13 @@ export const projects = [
 //  Skills
 // ---------------------------------------------------------------------------
 export const skills = [
+  { name: 'LangChain', Icon: SiLangchain, color: '#4ade80' },
+  { name: 'RAG / Vector Search', Icon: FaDatabase, color: '#8B5CF6' },
+  { name: 'LLM APIs', Icon: SiOpenai, color: '#74aa9c' },
+  { name: 'Hugging Face', Icon: SiHuggingface, color: '#FFD21E' },
+  { name: 'FastAPI', Icon: SiFastapi, color: '#009688' },
+  { name: 'Streamlit', Icon: SiStreamlit, color: '#FF4B4B' },
+  { name: 'Python', Icon: FaPython, color: '#FFD43B' },
   { name: 'JavaScript', Icon: SiJavascript, color: '#F7DF1E' },
   { name: 'React', Icon: FaReact, color: '#61DAFB' },
   { name: 'NodeJS', Icon: FaNodeJs, color: '#339933' },
@@ -242,7 +255,6 @@ export const skills = [
   { name: 'SASS', Icon: FaSass, color: '#CC6699' },
   { name: 'Bootstrap', Icon: SiBootstrap, color: '#7952B3' },
   { name: 'Tailwind CSS', Icon: SiTailwindcss, color: '#06B6D4' },
-  { name: 'Python', Icon: FaPython, color: '#FFD43B' },
   { name: 'AWS', Icon: FaAws, color: '#FF9900' },
   { name: 'GitHub', Icon: FaGithub, color: '#ffffff' },
 ];
