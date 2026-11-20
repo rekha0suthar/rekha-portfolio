@@ -2,7 +2,7 @@
 
 ![Rekha Suthar — Full-Stack Engineer · AI Application Developer · IIT Madras (Data Science)](public/og-image.png)
 
-Personal portfolio for **Rekha Suthar** — full-stack engineer with a Data Science background from IIT Madras, building AI-powered web products end to end with React, Node, and the Claude / Groq API.
+Personal portfolio for **Rekha Suthar** — full-stack engineer with a Data Science background from IIT Madras, building AI-powered products end to end: LLM apps, RAG pipelines, and the evals that prove they work.
 
 🔗 **Live**: [rekha-suthar-portfolio.netlify.app](https://rekha-suthar-portfolio.netlify.app/)
 
@@ -14,10 +14,9 @@ Personal portfolio for **Rekha Suthar** — full-stack engineer with a Data Scie
 |---|---|
 | **Home** | Hero with a typewriter-rotated job-title strip + social + résumé link. |
 | **About** | Short bio, journey cards, current focus. |
-| **Now** | *Currently Building* — projects actively in progress, with status pills + live demo + repo links. |
 | **Education** | B.Sc. Data Science & Applications, IIT Madras + upGrad FSD Bootcamp. |
 | **Experience** | Vertical timeline of roles. |
-| **Projects** | Curated full-stack work with live demos + GitHub. |
+| **Projects** | Curated work — AI applications first — with live demos + GitHub. |
 | **Writing** | Short build notes I publish on [dev.to](https://dev.to/rekha0suthar). |
 | **Skills** | Frontend, backend, AI/ML, data tooling. |
 | **Certificates** | HackerRank SQL, Outskill GenAI, upGrad FSD, Web Dev Hackathon. |
@@ -47,13 +46,12 @@ The codebase intentionally separates **data** from **presentation**:
 src/
 ├── data/
 │   └── index.js          ← Single source of truth for ALL content
-│                            (personal, navLinks, about, currentlyBuilding,
-│                             writings, education, experiences, projects,
+│                            (personal, navLinks, about, writings,
+│                             education, experiences, projects,
 │                             skills, certificates)
 ├── components/
 │   ├── Home.jsx          ← Each section is a focused component that
 │   ├── About.jsx           imports only the data it needs
-│   ├── Now.jsx
 │   ├── Education.jsx
 │   ├── Experience.jsx
 │   ├── Projects.jsx
@@ -67,7 +65,7 @@ src/
 └── styles/                ← One CSS file per component
 ```
 
-Want to add a new project, a new "Currently Building" entry, a new writing post, or update your bio? Open `src/data/index.js`, edit the relevant export, save, push. The whole site updates.
+Want to add a new project, a new writing post, or update your bio? Open `src/data/index.js`, edit the relevant export, save, push. The whole site updates.
 
 ---
 
@@ -109,7 +107,9 @@ npm run build   # produces /build
 
 ## Companion projects
 
-- **[AI Resume Tailor](https://github.com/rekha0suthar/ai-resume-tailor)** ([live demo](https://ai-resume-tailor-ruby.vercel.app/)) — paste a resume + JD, get tailored bullet rewrites, ATS keyword gaps, and likely interview questions. Built on Groq Llama 3.3 70B + Vercel Functions.
+- **[AI Resume Tailor](https://github.com/rekha0suthar/ai-resume-tailor)** ([live demo](https://ai-resume-tailor-ruby.vercel.app/)) — LLM app that rewrites a resume against a job description: streamed output over SSE, match scoring, chat refinement, PDF export. React + Vercel Functions + Groq.
+- **[RAG Brand Q&A Assistant](https://github.com/rekha0suthar/rag-brand-Q-A-assistant)** ([live demo](https://rag-brand-q-a-assistant-kewjcwl4ezwdteptjda5ny.streamlit.app)) — document-grounded assistant with a calibrated refusal gate and evidence-only citations. LangChain + FAISS + Streamlit.
+- **[PDF Question Answering](https://github.com/rekha0suthar/pdf-question-answer-ai)** — extractive QA over PDFs with DistilBERT: span answers with confidence scores. FastAPI + React + Docker.
 - **[Grocery Store](https://github.com/rekha0suthar/grocery-store)** — MERN e-commerce with role-based access for customers, admins, and store managers.
 - **[FinScope](https://github.com/rekha0suthar/budget_tracker)** — full-stack budgeting app with chart-based spending insights.
 
@@ -131,7 +131,7 @@ Drafts live in [`writings/`](writings/) before publishing.
 - **LinkedIn**: [linkedin.com/in/rekha0suthar](https://www.linkedin.com/in/rekha0suthar/)
 - **GitHub**: [@rekha0suthar](https://github.com/rekha0suthar)
 - **Email**: rekha0suthar@gmail.com
-- **Location**: Bangalore, Karnataka, India
+- **Location**: Jaipur, Rajasthan, India
 
 Open to **Full-Stack SWE** and **AI Application Engineer** roles.
 
