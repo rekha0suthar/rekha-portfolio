@@ -1,7 +1,6 @@
 import './App.css';
 import Home from './components/Home';
 import About from './components/About';
-import Now from './components/Now';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Writing from './components/Writing';
@@ -26,7 +25,6 @@ const App = () => {
       <main>
         <Home />
         <About />
-        <Now />
         <Education />
         <Experience />
         <Projects />

@@ -5,10 +5,9 @@
 //      import { personal, projects } from '../data';
 // =============================================================================
 
-import insta from '../assets/insta.png';
-import bankfresh from '../assets/bankfresh.png';
-import shortify from '../assets/shortify.png';
-import seva from '../assets/seva.png';
+import resumeTailor from '../assets/resume-tailor.png';
+import ragBrandQa from '../assets/rag-brand-qa.png';
+import pdfQa from '../assets/pdf-qa.png';
 import finscope from '../assets/finscope.png';
 import grocery from '../assets/grocery.png';
 
@@ -49,7 +48,8 @@ export const personal = {
   firstName: 'Rekha',
   email: 'rekha0suthar@gmail.com',
 
-  heroHeading: 'Building AI-powered web products end to end',
+  heroHeading:
+    'I build AI-powered products end to end — LLM apps, RAG pipelines, and the evals that prove they work.',
   typewriterRoles: [
     'AI Application Engineer',
     'Full-Stack with React & Node',
@@ -73,7 +73,6 @@ export const personal = {
 export const navLinks = [
   { id: 'home', label: 'Home' },
   { id: 'about', label: 'About' },
-  { id: 'now', label: 'Now' },
   { id: 'education', label: 'Education' },
   { id: 'experience', label: 'Experience' },
   { id: 'projects', label: 'Projects' },
@@ -89,7 +88,7 @@ export const navLinks = [
 export const about = {
   greeting: "Hi, I'm Rekha Suthar!",
   intro:
-    'Full-stack engineer with a Data Science background from IIT Madras, building AI-powered web products end to end — from React UIs and design-system work to integrating LLM APIs and retrieval pipelines. Production experience shipping React apps with Node/Express backends; comfortable owning features from spec to deployment. Currently focused on AI application development: LLM-powered tools, retrieval-augmented chat, and prompt-driven UX.',
+    'Full-stack engineer with a B.Sc. in Data Science & Applications from IIT Madras, building AI-powered products end to end — LLM apps, RAG pipelines, and the evals that prove they work. Production experience shipping React apps with Node/Express backends; comfortable owning features from spec to deployment. Open-source contributor to LiteLLM, Haystack, and Continue.',
 
   journey: [
     {
@@ -102,7 +101,7 @@ export const about = {
     },
     {
       title: 'AI Application Development',
-      body: 'Currently shipping LLM-powered features with the Claude API: prompt design for structured output, streaming UI, retrieval-augmented chat with embeddings and vector search.',
+      body: 'Shipping LLM-powered products: streaming generation UIs, retrieval-augmented Q&A with embeddings and vector search, and eval suites that gate CI. Contributing to open-source AI tooling — LiteLLM, Haystack, and Continue.',
     },
     {
       title: 'Passions & Interests',
@@ -114,32 +113,6 @@ export const about = {
     },
   ],
 };
-
-// ---------------------------------------------------------------------------
-//  Currently Building
-// ---------------------------------------------------------------------------
-export const currentlyBuilding = [
-  {
-    title: 'AI Resume Tailor',
-    summary:
-      'Paste a resume and a job description, get tailored bullet rewrites, ATS keyword gaps, and likely interview questions back. v0 ships on Vite + React + Vercel Functions + Groq Llama 3.3 70B. Coming next: v1 streaming UI, v2 PDF upload, v3 template-based resume generation with one-click PDF download — evolving from a dev tool into a real-world product.',
-    status: 'Live (v0)',
-    target: 'v1 streaming → v2 PDF upload → v3 template + download',
-    tags: ['React', 'Vite', 'Vercel Functions', 'Groq', 'Llama 3.3'],
-    demoLink: 'https://ai-resume-tailor-ruby.vercel.app/',
-    repoLink: 'https://github.com/rekha0suthar/ai-resume-tailor',
-  },
-  {
-    title: 'Chat with Your Docs (RAG)',
-    summary:
-      'Upload a PDF or markdown folder, ask questions, get answers with the source paragraphs cited. Built on embeddings + pgvector + Claude.',
-    status: 'Planned',
-    target: 'Q3 2026',
-    tags: ['React', 'Node.js', 'Claude API', 'pgvector', 'RAG'],
-    demoLink: null,
-    repoLink: null,
-  },
-];
 
 // ---------------------------------------------------------------------------
 //  Writing
@@ -202,6 +175,34 @@ export const experiences = [
 // ---------------------------------------------------------------------------
 export const projects = [
   {
+    projectName: 'AI Resume Tailor',
+    projectImage: resumeTailor,
+    projectRepoLink: 'https://github.com/rekha0suthar/ai-resume-tailor',
+    projectDemoLink: 'https://ai-resume-tailor-ruby.vercel.app',
+    projectSummary:
+      'LLM app that rewrites a resume against a job description: streamed output over SSE, component-based match scoring, chat refinement, PDF export. 170+ tests, CI-gated deploys.',
+    techStack: ['React', 'Vercel Functions', 'Groq'],
+  },
+  {
+    projectName: 'RAG Brand Q&A Assistant',
+    projectImage: ragBrandQa,
+    projectRepoLink: 'https://github.com/rekha0suthar/rag-brand-Q-A-assistant',
+    projectDemoLink:
+      'https://rag-brand-q-a-assistant-kewjcwl4ezwdteptjda5ny.streamlit.app',
+    projectSummary:
+      'Document-grounded assistant with a calibrated refusal gate and evidence-only citations. Retrieval quality measured in CI: hit@3 0.94, MRR 0.95. 85 tests.',
+    techStack: ['LangChain', 'FAISS', 'Streamlit'],
+  },
+  {
+    projectName: 'PDF Question Answering',
+    projectImage: pdfQa,
+    projectRepoLink: 'https://github.com/rekha0suthar/pdf-question-answer-ai',
+    projectDemoLink: null,
+    projectSummary:
+      'Extractive QA over PDFs with DistilBERT: span answers with confidence scores.',
+    techStack: ['FastAPI', 'React', 'Docker'],
+  },
+  {
     projectName: 'Grocery Store',
     projectImage: grocery,
     projectRepoLink: 'https://github.com/rekha0suthar/grocery-store',
@@ -217,42 +218,6 @@ export const projects = [
     projectDemoLink: 'https://finscope-orpin.vercel.app/',
     projectSummary:
       'Full-stack budgeting app: income and expenses, monthly budgets, summaries, and chart-based insights.',
-    techStack: ['React', 'Node.js', 'MongoDB'],
-  },
-  {
-    projectName: 'Seva Booking',
-    projectImage: seva,
-    projectRepoLink: 'https://github.com/rekha0suthar/seva-booking-app',
-    projectDemoLink: 'https://seva-booking.vercel.app/',
-    projectSummary:
-      'Booking flow with mobile-number login: browse offerings, reserve sevas, capture address details, and complete payment/checkout.',
-    techStack: ['React', 'Node.js'],
-  },
-  {
-    projectName: 'Shortify',
-    projectImage: shortify,
-    projectRepoLink: 'https://github.com/rekha0suthar/url-shorten',
-    projectDemoLink: 'https://shortify-nu.vercel.app/',
-    projectSummary:
-      'URL shortener with link creation, lightweight management UI, and basic analytics-oriented structure for short-link usage.',
-    techStack: ['React', 'Node.js', 'REST'],
-  },
-  {
-    projectName: 'Bankfresh',
-    projectImage: bankfresh,
-    projectRepoLink: 'https://github.com/rekha0suthar/bankfresh',
-    projectDemoLink: 'https://bankfresh-netbanking.vercel.app/',
-    projectSummary:
-      'Netbanking-style demo: account signup, balances, statements, transfers, cards, utilities, and account servicing flows.',
-    techStack: ['React', 'Node.js', 'MongoDB'],
-  },
-  {
-    projectName: 'Insta Clone',
-    projectImage: insta,
-    projectRepoLink: 'https://github.com/rekha0suthar/insta-clone',
-    projectDemoLink: 'https://insta-clone-eight-jade.vercel.app/',
-    projectSummary:
-      'Social feed with auth: posts (CRUD), likes and comments, follow/unfollow, and profile-oriented navigation.',
     techStack: ['React', 'Node.js', 'MongoDB'],
   },
 ];

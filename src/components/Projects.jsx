@@ -8,7 +8,8 @@ const Projects = () => {
       <h1 className="section-title">Projects</h1>
       <div className="title-underline"></div>
       <p className="projects-intro">
-        Selected full-stack work. More repos and experiments live on{' '}
+        Selected work — AI applications first, plus full-stack products. More
+        repos and experiments live on{' '}
         <a href={personal.socials.github} target="_blank" rel="noreferrer">
           GitHub
         </a>
@@ -35,14 +36,16 @@ const Projects = () => {
                 </div>
               ) : null}
               <div className="project-links">
-                <a
-                  href={project.projectDemoLink}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="demo-btn"
-                >
-                  Live Demo
-                </a>
+                {project.projectDemoLink && (
+                  <a
+                    href={project.projectDemoLink}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="demo-btn"
+                  >
+                    Live Demo
+                  </a>
+                )}
                 <a
                   href={project.projectRepoLink}
                   target="_blank"
