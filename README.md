@@ -95,6 +95,25 @@ Without these the form renders fine; submissions just no-op.
 
 ---
 
+## AI assistant
+
+The floating chat bubble (bottom-right) is an AI assistant that answers visitor questions about Rekha — projects, skills, experience, writing — grounded in a fact sheet compiled from the site's content (`src/data/index.js`).
+
+How it works:
+
+- **Frontend**: `src/components/ChatAssistant.jsx` — a floating widget that POSTs the conversation to a serverless function. No API key in the browser.
+- **Backend**: `netlify/functions/chat.mjs` — a Netlify Function that calls Groq's OpenAI-compatible chat completions API (default model `openai/gpt-oss-20b`, overridable via `GROQ_MODEL`) with a hardcoded system prompt containing only facts already public on this site. It validates input (max 20 messages, 500 chars each), maps upstream rate limits to a friendly message, and returns `{ reply }`.
+
+Required setup (Netlify dashboard → Site settings → Environment variables):
+
+```
+GROQ_API_KEY=...   # from console.groq.com
+```
+
+Without the key the widget renders fine; answers just return a configuration error.
+
+---
+
 ## Deploy
 
 Hosted on **Netlify** with automatic GitHub deploys — every push to `main` triggers a rebuild.
