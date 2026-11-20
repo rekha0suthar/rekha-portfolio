@@ -11,6 +11,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Certificates from './components/Certificates';
 import ParticlesBackground from './components/ParticlesBackground';
+import ChatAssistant from './components/ChatAssistant';
 
 const App = () => {
   return (
@@ -36,6 +37,9 @@ const App = () => {
 
       {/* Footer */}
       <Footer />
+
+      {/* Floating AI chat assistant (available on all sections) */}
+      <ChatAssistant />
     </div>
   );
 };
